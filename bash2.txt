@@ -1,0 +1,806 @@
+MacBook-Pro:bash elenatokareva$ touch bash2.txt
+MacBook-Pro:bash elenatokareva$ cd ~
+MacBook-Pro:~ elenatokareva$ mkdir test3
+MacBook-Pro:~ elenatokareva$ cd /Users/elenatokareva/test3 
+MacBook-Pro:test3 elenatokareva$ echo -e "row1\nrow2\nrow3\nrow4" > file4
+MacBook-Pro:test3 elenatokareva$ echo -e "row1\nrow2\nrow3\nrow4" > file5
+MacBook-Pro:test3 elenatokareva$ echo -e "row1\nrow2\nrow3\nrow4" > file6
+MacBook-Pro:test3 elenatokareva$ grep "row2" file5
+row2
+MacBook-Pro:test3 elenatokareva$ grep -r "row" .
+./file4:row1
+./file4:row2
+./file4:row3
+./file4:row4
+./file5:row1
+./file5:row2
+./file5:row3
+./file5:row4
+./file6:row1
+./file6:row2
+./file6:row3
+./file6:row4
+MacBook-Pro:test3 elenatokareva$ grep -c "row" file6
+4
+MacBook-Pro:test3 elenatokareva$ find file5
+file5
+MacBook-Pro:test3 elenatokareva$ find . -name "file5" -exec rm -f {} \;
+MacBook-Pro:test3 elenatokareva$ echo "test" > file4
+MacBook-Pro:test3 elenatokareva$ cat file4
+test
+MacBook-Pro:test3 elenatokareva$ sed -i ''  's/test/fail/g' file4
+MacBook-Pro:test3 elenatokareva$ cat file4
+fail
+MacBook-Pro:test3 elenatokareva$ echo "test" >> file4
+MacBook-Pro:test3 elenatokareva$ cat file4
+fail
+test
+MacBook-Pro:test3 elenatokareva$ ps aux
+USER               PID  %CPU %MEM      VSZ    RSS   TT  STAT STARTED      TIME COMMAND
+root               337   5.8  0.1 426980240  10672   ??  Ss    9Jan25 130:48.89 /usr/libexec/ope
+elenatokareva    22111   5.2  1.7 1624063056 321872   ??  S     1:21PM   3:07.65 /Applications/Go
+_windowserver      367   4.4  1.0 416061280 180976   ??  Ss    9Jan25 3058:45.69 /System/Library/
+elenatokareva    81726   2.3  0.6 412632464 105888   ??  S     2Feb25   2:17.46 /System/Applicat
+elenatokareva    34277   2.1  0.9 419585040 176752   ??  S     4Feb25 224:22.56 /Applications/Mi
+elenatokareva     1475   2.0  0.7 445358000 137392   ??  S     9Jan25 459:02.71 /Applications/Go
+elenatokareva    80657   1.8  1.0 418296896 187360   ??  S     2Feb25 827:10.29 /Applications/zo
+root               520   1.5  0.2 416914592  36528   ??  Ss    9Jan25 612:42.54 /Library/SystemE
+elenatokareva    89249   1.2  0.2 444077264  30624   ??  S    20Jan25 110:30.46 /Applications/Т
+elenatokareva      766   1.0  2.6 448114704 495968   ??  S     9Jan25 865:47.31 /Applications/Go
+elenatokareva      793   0.9  1.0 424693552 191008   ??  S     9Jan25 325:16.17 /System/Applicat
+elenatokareva    84008   0.6  2.1 419293872 398928   ??  S    29Jan25 600:32.94 /Applications/Te
+elenatokareva    56843   0.6  0.8 417529872 144256   ??  S    16Jan25  88:21.70 /System/Applicat
+elenatokareva    80676   0.5  0.1 411936304  21632   ??  S     2Feb25  88:22.43 /Applications/zo
+root             87006   0.4  0.0 426940448   1920   ??  Ss   Sun10PM   0:00.39 /usr/libexec/log
+root               340   0.4  0.1 426975360  10912   ??  Ss    9Jan25  28:06.14 /System/Library/
+elenatokareva     1483   0.4  0.5 444273856  85872   ??  S     9Jan25 151:08.99 /Applications/Go
+elenatokareva    83671   0.4  0.1 412187488  18464   ??  S    Sun08PM   1:22.60 /System/Library/
+root               299   0.4  0.2 427123376  29872   ??  Ss    9Jan25 186:22.17 /usr/libexec/log
+_driverkit         521   0.3  0.2 426920928  41248   ??  Ss    9Jan25 659:58.04 /System/Library/
+elenatokareva    83650   0.2  0.0 426940864   3824   ??  S    Sun07PM   0:47.16 /System/Library/
+elenatokareva    13659   0.2  0.3 1597344768  56128   ??  S    10Jan25  84:57.46 /Applications/Po
+root               363   0.2  0.0 426973984   6688   ??  Ss    9Jan25  47:33.11 /usr/libexec/cor
+elenatokareva      292   0.2  1.0 1622456944 194432   ??  S    Tue08AM  11:17.45 /Applications/Go
+elenatokareva    89236   0.1  0.5 1597398864  90576   ??  S    20Jan25  39:02.51 /Applications/Т
+elenatokareva    83721   0.1  0.1 426991056  15520   ??  Ss   Sun08PM   0:24.36 /System/Library/
+root                 1   0.1  0.1 426852512  17984   ??  Ss    9Jan25 272:50.52 /sbin/launchd
+root               361   0.1  0.0 426936288   3424   ??  Ss    9Jan25  53:15.57 /usr/sbin/notify
+elenatokareva    13669   0.1  0.1 444267040  12800   ??  S    10Jan25  98:10.09 /Applications/Po
+elenatokareva    22021   0.0  0.8 1622333456 156256   ??  S     1:14PM   0:08.21 /Applications/Go
+elenatokareva    21998   0.0  0.1 427036608  21600   ??  Ss    1:12PM   0:00.39 /System/Library/
+elenatokareva    21874   0.0  0.1 426984384  10544   ??  Ss    1:06PM   0:00.35 /System/Library/
+root             21839   0.0  0.0 411056384   3360   ??  Ss    1:02PM   0:00.03 /System/Library/
+elenatokareva    21799   0.0  0.0 426901632   5408   ??  Ss   12:57PM   0:00.07 /System/Library/
+elenatokareva    21793   0.0  0.2 427174384  30688   ??  S    12:57PM   0:00.41 /System/Library/
+elenatokareva    21792   0.0  0.0 426936768   2368   ??  Ss   12:57PM   0:00.02 /System/Library/
+elenatokareva    19666   0.0  0.1 426992544  20528   ??  S     9:13AM   0:01.73 /usr/libexec/rem
+_netbios         18731   0.0  0.0 426941152   3264   ??  SNs   8:04AM   0:00.23 /usr/sbin/netbio
+elenatokareva    16279   0.0  0.2 411498320  29952   ??  Ss    8:19PM   0:02.47 /System/Library/
+elenatokareva    16230   0.0  0.2 427025280  45024   ??  S     7:50PM   1:39.83 /usr/libexec/due
+elenatokareva    16178   0.0  0.0 426974560   6416   ??  Ss    7:42PM   0:00.11 /System/Library/
+elenatokareva    16132   0.0  0.1 426996384  19200   ??  Ss    7:38PM   0:08.82 /System/Library/
+elenatokareva    15077   0.0  0.0 411086832   3632   ??  Ss    5:43PM   0:00.07 /System/Library/
+elenatokareva    15064   0.0  0.0 426974288   1968   ??  Ss    5:43PM   0:00.30 /System/Library/
+elenatokareva    15063   0.0  0.1 427044224  14800   ??  Ss    5:43PM   0:00.50 /System/Library/
+elenatokareva    14797   0.0  0.3 1597624576  59488   ??  S     5:05PM   0:11.50 /Applications/Fo
+elenatokareva    14796   0.0  0.0 426903088   5360   ??  Ss    5:05PM   0:00.07 /System/Library/
+elenatokareva    14793   0.0  0.1 411047264  10816   ??  S     5:05PM   0:01.86 /Applications/Fo
+elenatokareva    14792   0.0  0.1 412497488  18352   ??  S     5:05PM   0:01.05 /Applications/Fo
+root             14789   0.0  0.0 411509840   7168   ??  Ss    5:05PM   0:06.18 /Library/Privile
+root             14788   0.0  0.0 426974896   6400   ??  Ss    5:05PM   0:00.08 /System/Library/
+elenatokareva    14787   0.0  0.2 412280048  33440   ??  S     5:05PM   0:04.60 /Applications/Fo
+elenatokareva    14786   0.0  0.2 412102896  30704   ??  S     5:05PM   0:29.02 /Applications/Fo
+root             14776   0.0  0.1 412169072  11136   ??  Ss    5:05PM   0:57.88 /Library/Applica
+elenatokareva    14773   0.0  0.1 412361488  27008   ??  S     5:05PM   0:01.83 /Applications/Fo
+elenatokareva    14772   0.0  0.4 1589554336  76096   ??  S     5:05PM   0:09.20 /Applications/Fo
+root             14389   0.0  0.0 426940784   3264   ??  Ss    4:41PM   0:00.10 /System/Library/
+elenatokareva    14385   0.0  0.0 410356544   2416   ??  Ss    4:41PM   0:00.04 /System/Library/
+elenatokareva    14259   0.0  0.0 410318656   2416   ??  Ss    4:23PM   0:00.02 /System/Library/
+elenatokareva    12523   0.0  0.0 426983824   8848   ??  Ss   Wed01PM   0:00.05 /System/Library/
+elenatokareva    12522   0.0  0.0 426973728   6064   ??  Ss   Wed01PM   0:00.38 /System/Library/
+elenatokareva    12520   0.0  0.0 426982256   1200   ??  Ss   Wed01PM   0:00.33 /System/Library/
+elenatokareva    12519   0.0  0.0 411389840   9168   ??  Ss   Wed01PM   0:00.29 /System/Library/
+root             12236   0.0  0.1 411460848  10656   ??  Ss   Wed01PM   0:00.10 /System/Library/
+elenatokareva    10083   0.0  0.0 410206080   1792   ??  Ss   Wed09AM   0:00.03 /System/Library/
+_fpsd            10081   0.0  0.0 426936624   1328   ??  S    Wed09AM   0:00.05 /usr/sbin/cfpref
+elenatokareva     9554   0.0  1.0 429061664 194976   ??  S    Wed08AM   0:20.55 /System/Library/
+elenatokareva     8814   0.0  0.1 410946176   9936   ??  Ss   Wed07AM   0:01.79 /System/Library/
+elenatokareva     8598   0.0  0.1 426978320  20064   ??  S    Wed07AM   0:00.41 /System/Library/
+root              8586   0.0  0.0 426974192   4336   ??  Ss   Wed07AM   0:00.11 /usr/libexec/sys
+elenatokareva     8566   0.0  0.1 426979248  10528   ??  S    Wed07AM   0:01.22 /System/Library/
+_accessoryupdater  8544   0.0  0.0 426974384   3920   ??  Ss   Wed07AM   0:00.20 /System/Library/
+_accessoryupdater  8541   0.0  0.0 426968544   3696   ??  Ss   Wed07AM   0:00.18 /System/Library/
+root              8540   0.0  0.0 426940752   3392   ??  Ss   Wed07AM   0:00.05 /usr/libexec/mic
+elenatokareva     8528   0.0  0.0 410939952   5760   ??  Ss   Wed07AM   0:00.08 /System/Library/
+elenatokareva     8527   0.0  0.0 410902400   3760   ??  Ss   Wed07AM   0:00.06 /System/Library/
+elenatokareva     8526   0.0  0.0 410948544   5840   ??  Ss   Wed07AM   0:00.08 /System/Library/
+elenatokareva     8525   0.0  0.0 410771360   3664   ??  Ss   Wed07AM   0:00.04 /System/Library/
+elenatokareva     8524   0.0  0.0 410771328   3648   ??  Ss   Wed07AM   0:00.05 /System/Library/
+elenatokareva     8523   0.0  0.0 410903040   3824   ??  Ss   Wed07AM   0:00.05 /System/Library/
+elenatokareva     8518   0.0  0.0 410771872   5648   ??  Ss   Wed07AM   0:00.13 /System/Library/
+elenatokareva     8513   0.0  0.0 410771328   3680   ??  Ss   Wed07AM   0:00.07 /System/Library/
+elenatokareva     8507   0.0  0.0 411033536   3808   ??  Ss   Wed07AM   0:00.06 /System/Library/
+elenatokareva     8505   0.0  0.0 410937920   5552   ??  Ss   Wed07AM   0:00.15 /System/Library/
+elenatokareva     8504   0.0  0.0 426975312   5664   ??  S    Wed07AM   0:00.17 /System/Library/
+_rmd              8500   0.0  0.0 410903056   3984   ??  Ss   Wed07AM   0:00.15 /System/Library/
+_rmd              8499   0.0  0.0 410902384   3616   ??  Ss   Wed07AM   0:00.10 /System/Library/
+_rmd              8498   0.0  0.0 411165152   5248   ??  Ss   Wed07AM   0:00.15 /System/Library/
+_rmd              8497   0.0  0.0 410771344   3696   ??  Ss   Wed07AM   0:00.08 /System/Library/
+_rmd              8496   0.0  0.0 410771360   3664   ??  Ss   Wed07AM   0:00.06 /System/Library/
+_rmd              8495   0.0  0.0 410902400   3648   ??  Ss   Wed07AM   0:00.10 /System/Library/
+_rmd              8492   0.0  0.0 410902928   5664   ??  Ss   Wed07AM   0:00.11 /System/Library/
+_rmd              8491   0.0  0.0 410771328   3680   ??  Ss   Wed07AM   0:00.15 /System/Library/
+_rmd              8490   0.0  0.0 410771376   3696   ??  Ss   Wed07AM   0:00.15 /System/Library/
+_rmd              8489   0.0  0.0 426974784   5632   ??  Ss   Wed07AM   0:00.20 /System/Library/
+root              8485   0.0  0.0 411034000   2928   ??  Ss   Wed07AM   0:00.05 /System/Library/
+elenatokareva     8478   0.0  0.0 426979376   8096   ??  Ss   Wed07AM   0:01.46 /System/Library/
+elenatokareva     8477   0.0  0.0 426973840   7088   ??  S    Wed07AM   0:00.52 /System/Library/
+_neuralengine     8474   0.0  0.0 426937472   2160   ??  Ss   Wed07AM   0:00.04 /System/Library/
+root              8473   0.0  0.0 426937472   3136   ??  Ss   Wed07AM   0:00.46 /System/Library/
+elenatokareva     8472   0.0  0.0 426936688   4640   ??  S    Wed07AM   0:02.58 /usr/libexec/gam
+_gamecontrollerd  8471   0.0  0.0 410935136   4544   ??  S    Wed07AM   0:00.10 /System/Library/
+_gamecontrollerd  8470   0.0  0.0 426941088   5584   ??  Ss   Wed07AM   0:02.71 /usr/libexec/gam
+elenatokareva     8464   0.0  0.0 427040736   9056   ??  S    Wed07AM   0:00.96 /System/Library/
+root              8462   0.0  0.0 426936096   2016   ??  Ss   Wed07AM   0:00.06 /System/Library/
+root              8453   0.0  0.0 426978080   3984   ??  Ss   Wed07AM   0:00.19 /usr/libexec/dpr
+elenatokareva     8447   0.0  0.0 426973200   5664   ??  S    Wed07AM   0:00.13 /usr/libexec/cip
+elenatokareva     8416   0.0  0.0 411198672   5536   ??  Ss   Wed07AM   0:01.03 /System/Library/
+elenatokareva     8415   0.0  0.0 426976160   6288   ??  S    Wed07AM   0:00.11 /System/Library/
+root              8414   0.0  0.0 426936272   3040   ??  Ss   Wed07AM   0:00.03 /usr/libexec/gri
+root              8380   0.0  0.0 426936720   3136   ??  Ss   Wed07AM   0:00.19 /usr/libexec/pow
+_nsurlsessiond    8250   0.0  0.0 411426848   3520   ??  Ss   Wed06AM   0:02.03 /System/Library/
+elenatokareva     8115   0.0  0.0 410681664   7280   ??  Ss   Wed02AM   0:00.11 /System/Library/
+elenatokareva     7356   0.0  0.0 426984288   8672   ??  Ss   Tue11PM   0:00.16 /System/Library/
+elenatokareva     7344   0.0  0.0 426970208   5536   ??  S    Tue11PM   0:01.00 /usr/libexec/MTL
+elenatokareva     7347   0.0  0.0 410841696   6688   ??  Ss   Tue11PM   0:00.08 /System/Library/
+elenatokareva     7346   0.0  0.1 426991728  13680   ??  S    Tue11PM   0:00.65 /System/Library/
+elenatokareva     7345   0.0  0.0 410784096   3920   ??  S    Tue11PM   0:00.04 /System/Library/
+root              5688   0.0  0.0 410180480   1744   ??  Ss   Tue11PM   0:00.02 /System/Library/
+elenatokareva     5236   0.0  0.5 1623561968  85808   ??  S    Tue08PM   0:01.40 /Applications/Go
+elenatokareva     5235   0.0  0.5 1622101024  93520   ??  S    Tue08PM   0:01.37 /Applications/Go
+elenatokareva     5234   0.0  0.5 1622122192  90512   ??  S    Tue08PM   0:01.30 /Applications/Go
+elenatokareva     5232   0.0  0.7 1622124656 126928   ??  S    Tue08PM   1:21.52 /Applications/Go
+elenatokareva     5230   0.0  1.0 1622431616 182832   ??  S    Tue08PM   0:48.33 /Applications/Go
+elenatokareva     5034   0.0  0.0 410849600   3392   ??  Ss   Tue05PM   0:00.04 /System/Library/
+elenatokareva     2835   0.0  0.0 426973856   6464   ??  S    Tue12PM   0:00.10 /System/Library/
+elenatokareva     2433   0.0  0.0 410814448   3040   ??  Ss   Tue12PM   0:00.06 /System/Library/
+elenatokareva     2423   0.0  0.1 427065328  23728   ??  Ss   Tue12PM   0:03.01 /System/Library/
+root              1767   0.0  0.0 426940432   2624   ??  Ss   Tue11AM   0:00.09 /usr/libexec/key
+root              1752   0.0  0.1 411333648  11776   ??  Ss   Tue11AM   0:01.83 /System/Library/
+_assetcache       1751   0.0  0.0 426975168   8064   ??  Ss   Tue11AM   0:01.05 /System/Library/
+root              1750   0.0  0.0 426968320   2688   ??  Ss   Tue11AM   0:00.05 /usr/libexec/tzd
+elenatokareva     1546   0.0  0.0 426901280   5552   ??  Ss   Tue10AM   2:35.32 /System/Library/
+elenatokareva     1526   0.0  0.1 427030896  19920   ??  S    Tue10AM   0:01.27 /System/Library/
+elenatokareva     1213   0.0  0.0 410972480   3104   ??  Ss   Tue10AM   0:00.04 /System/Library/
+elenatokareva      775   0.0  0.8 1622307408 142800   ??  S    Tue08AM   2:54.02 /Applications/Go
+elenatokareva      690   0.0  0.1 426998784  13152   ??  S    Tue08AM   0:00.79 /System/Library/
+elenatokareva      384   0.0  2.4 1623937872 446832   ??  S    Tue08AM  16:55.08 /Applications/Go
+elenatokareva      362   0.0  0.3 427365632  50480   ??  Ss   Tue08AM   0:02.79 /System/Library/
+elenatokareva      358   0.0  0.1 427022528  16720   ??  S    Tue08AM   0:03.53 /usr/libexec/nat
+elenatokareva      192   0.0  0.0 410822976   3200   ??  Ss   Tue07AM   0:00.06 /System/Library/
+elenatokareva      186   0.0  0.8 1622348592 151056   ??  S    Tue07AM   1:22.55 /Applications/Go
+elenatokareva      114   0.0  0.0 410925376   3088   ??  Ss   Tue07AM   0:00.03 /System/Library/
+_hidd            99998   0.0  0.0 426936080   2288   ??  Ss   Tue07AM   0:00.03 /usr/libexec/hid
+elenatokareva    99581   0.0  0.1 427190608  13472   ??  S    Tue04AM   0:00.54 /System/Library/
+elenatokareva    99566   0.0  0.5 1622100128  99280   ??  S    Tue04AM   0:04.98 /Applications/Go
+elenatokareva    99554   0.0  0.0 426940928   5040   ??  S    Tue04AM   0:00.08 /usr/libexec/inp
+root             99510   0.0  0.0 426936048    384   ??  Ss   Tue03AM   0:00.02 /usr/libexec/dir
+root             99432   0.0  0.0 427094256   6416   ??  S    Tue01AM   0:00.08 /System/Library/
+root             99431   0.0  0.1 426985008  12016   ??  Ss   Tue01AM   0:00.47 /System/Library/
+root             99242   0.0  0.0 426940448    448   ??  Ss   Tue12AM   0:00.07 aslmanager
+_applepay        99184   0.0  0.0 426936640   1296   ??  S    Mon11PM   0:00.05 /usr/sbin/cfpref
+_applepay        99183   0.0  0.0 410806672   4000   ??  Ss   Mon11PM   0:00.02 /System/Library/
+_applepay        99181   0.0  0.0 426974992   7776   ??  Ss   Mon11PM   0:01.98 /usr/libexec/nfc
+elenatokareva    99176   0.0  0.0 426973632   4640   ??  S    Mon11PM   0:00.06 /usr/libexec/bet
+root             99177   0.0  0.0 426942256   3296   ??  Ss   Mon11PM   0:00.08 /usr/libexec/ASP
+elenatokareva    98103   0.0  0.0 426974288   1184   ??  Ss   Mon07PM   0:00.24 /System/Library/
+root             98083   0.0  0.0 426974032   5872   ??  Ss   Mon07PM   0:23.89 /System/Library/
+elenatokareva    98082   0.0  0.0 426936624   6256   ??  S    Mon07PM   0:00.10 /usr/libexec/fee
+elenatokareva    98079   0.0  0.0 426973056   7088   ??  S    Mon07PM   0:00.15 /System/Library/
+root             98077   0.0  0.0 426974256   7232   ??  Ss   Mon07PM   0:01.34 /usr/libexec/osp
+elenatokareva    97102   0.0  0.1 412181456  15392   ??  Ss   Mon05PM   0:01.62 /System/Library/
+elenatokareva    97066   0.0  0.0 426969520   5344   ??  Ss   Mon05PM   0:00.02 /System/Library/
+elenatokareva    97062   0.0  0.0 410831168   3104   ??  Ss   Mon05PM   0:00.02 /System/Library/
+elenatokareva    97061   0.0  0.1 426901152  13872   ??  Ss   Mon05PM   0:01.67 /System/Library/
+elenatokareva    97060   0.0  0.2 411505424  40080   ??  Ss   Mon05PM   0:08.39 /System/Library/
+elenatokareva    96207   0.0  0.0 426936832   2496   ??  S    Mon03PM   0:00.03 /usr/libexec/spi
+root             96206   0.0  0.1 427013088  15904   ??  Ss   Mon03PM   0:05.27 /usr/sbin/spindu
+_reportsystemmemory 95898   0.0  0.0 426968960   3152   ??  Ss   Mon03PM   0:00.05 /System/Library/
+root             95896   0.0  0.0 426941312   3232   ??  Ss   Mon03PM   0:00.09 /System/Library/
+root             95884   0.0  0.0 426936992   1808   ??  Ss   Mon03PM   0:00.04 /System/Library/
+elenatokareva    95576   0.0  0.0 426936656   2080   ??  Ss   Mon02PM   0:00.03 /Library/Apple/S
+root             95568   0.0  0.0 426936256   2624   ??  Ss   Mon02PM   0:00.12 /usr/libexec/usb
+root             95567   0.0  0.0 426940288   2432   ??  Ss   Mon02PM   0:00.04 /System/Library/
+elenatokareva    95459   0.0  0.0 426973056   5648   ??  S    Mon02PM   0:00.50 /System/Library/
+elenatokareva    95441   0.0  0.1 426977744  11216   ??  S    Mon02PM   0:01.07 /usr/libexec/int
+elenatokareva    95348   0.0  0.0 411770000   4976   ??  Ss   Mon01PM   0:04.88 /System/Library/
+elenatokareva    95347   0.0  0.0 426901712   4144   ??  Ss   Mon01PM   0:07.94 /System/Library/
+elenatokareva    95346   0.0  0.0 412022096   4240   ??  Ss   Mon01PM   0:00.68 /System/Library/
+_captiveagent    95207   0.0  0.0 426941568   3856   ??  Ss   Mon01PM   0:00.14 /usr/libexec/cap
+elenatokareva    95159   0.0  0.0 426968944   5584   ??  S    Mon01PM   0:00.13 /System/Cryptexe
+_fpsd            95148   0.0  0.0 426972608   6176   ??  S    Mon01PM   0:00.18 /System/Library/
+_appleevents     95136   0.0  0.0 426972592   6176   ??  S    Mon01PM   0:00.18 /System/Library/
+_coreaudiod      95134   0.0  0.0 426972592   6192   ??  S    Mon01PM   0:00.18 /System/Library/
+_assetcache      95135   0.0  0.0 426972592   6160   ??  S    Mon01PM   0:00.18 /System/Library/
+_spotlight       95137   0.0  0.0 426972592   6160   ??  S    Mon01PM   0:00.20 /System/Library/
+_gamecontrollerd 95132   0.0  0.0 426972592   6160   ??  S    Mon01PM   0:00.20 /System/Library/
+_rmd             95131   0.0  0.0 426972608   6176   ??  S    Mon01PM   0:00.20 /System/Library/
+_cmiodalassistants 95130   0.0  0.0 426972608   6192   ??  S    Mon01PM   0:00.20 /System/Library/
+_neuralengine    95129   0.0  0.0 426972608   6176   ??  S    Mon01PM   0:00.18 /System/Library/
+_softwareupdate  95125   0.0  0.0 426972608   6176   ??  S    Mon01PM   0:00.20 /System/Library/
+_nsurlsessiond   95128   0.0  0.0 426972608   6176   ??  S    Mon01PM   0:00.19 /System/Library/
+_accessoryupdater 95127   0.0  0.0 426972608   6176   ??  S    Mon01PM   0:00.18 /System/Library/
+root             95126   0.0  0.0 426972592   6224   ??  S    Mon01PM   0:00.21 /System/Library/
+elenatokareva    95123   0.0  0.1 413245760   9744   ??  S    Mon01PM   0:00.21 /System/Library/
+_windowserver    95119   0.0  0.0 426972592   6176   ??  S    Mon01PM   0:00.19 /System/Library/
+_audiomxd        95118   0.0  0.0 426972608   6176   ??  S    Mon01PM   0:00.19 /System/Library/
+elenatokareva    95116   0.0  0.0 426978096   3856   ??  S    Mon01PM   0:00.34 /usr/libexec/dpr
+_applepay        95113   0.0  0.0 426972608   6160   ??  S    Mon01PM   0:00.25 /System/Library/
+_locationd       95112   0.0  0.0 426972608   6176   ??  S    Mon01PM   0:00.26 /System/Library/
+elenatokareva    94879   0.0  0.1 426965696  21040   ??  Ss   Mon12PM   0:03.89 /System/Library/
+elenatokareva    94878   0.0  0.3 411336896  58080   ??  Ss   Mon12PM   0:43.74 /System/Library/
+elenatokareva    93876   0.0  0.1 410945024  12624   ??  S    Mon12PM   0:04.58 /System/Library/
+elenatokareva    93809   0.0  0.0 410224512   1808   ??  Ss   Mon12PM   0:00.03 /System/Library/
+elenatokareva    93599   0.0  0.1 427184608  14704   ??  Ss   Mon11AM   0:00.32 /System/Library/
+elenatokareva    93593   0.0  0.0 426976400   7904   ??  S    Mon11AM   0:01.03 /System/Library/
+elenatokareva    93531   0.0  0.0 426984832   5888   ??  Ss   Mon11AM   0:00.32 /System/Library/
+_audiomxd        93528   0.0  0.0 426940736   1728   ??  S    Mon11AM   0:00.06 /usr/sbin/cfpref
+elenatokareva    93164   0.0  0.0 426979744   6480   ??  Ss   Mon11AM   0:00.04 /System/Library/
+root             92960   0.0  0.0 426977712   6496   ??  Ss   Mon11AM   0:00.38 /usr/libexec/sym
+elenatokareva    92943   0.0  0.0 427094272   6560   ??  S    Mon11AM   0:00.51 /System/Library/
+elenatokareva    92934   0.0  0.1 427024368  22928   ??  S    Mon11AM   0:00.85 /System/Library/
+elenatokareva    92929   0.0  0.1 427000768  21232   ??  Ss   Mon11AM   0:03.55 /System/Library/
+_accessoryupdater 92930   0.0  0.0 426972560   4496   ??  Ss   Mon11AM   0:00.16 /System/Library/
+_softwareupdate  92915   0.0  0.0 426936672   2048   ??  S    Mon11AM   0:00.04 /System/Library/
+_softwareupdate  92912   0.0  0.0 426940736   1792   ??  S    Mon11AM   0:00.06 /usr/sbin/cfpref
+_softwareupdate  92909   0.0  0.2 427357472  29088   ??  Ss   Mon11AM   0:04.39 /System/Library/
+root             92906   0.0  0.0 412032704   4416   ??  Ss   Mon11AM   0:00.31 /private/var/db/
+_softwareupdate  92903   0.0  0.0 426975536   7632   ??  Ss   Mon11AM   0:00.92 /usr/libexec/NRD
+elenatokareva    92902   0.0  0.0 426936080   2272   ??  S    Mon11AM   0:00.06 /System/Library/
+root             92880   0.0  0.0 426940912   5376   ??  Ss   Mon11AM   0:01.04 /usr/libexec/tri
+elenatokareva    92873   0.0  0.0 427001152   8880   ??  S    Mon11AM   0:00.52 /System/Library/
+_softwareupdate  92868   0.0  0.0 426975968   4848   ??  Ss   Mon11AM   0:00.39 /System/Library/
+elenatokareva    92862   0.0  0.0 426941280   2336   ??  S    Mon11AM   0:00.07 /System/Library/
+root             92863   0.0  0.0 426973120   5600   ??  Ss   Mon11AM   0:00.68 /System/Library/
+_neuralengine    92859   0.0  0.0 426973840   4272   ??  Ss   Mon11AM   0:00.23 /usr/libexec/ane
+root             92861   0.0  0.0 426940752   2976   ??  Ss   Mon11AM   0:00.52 /System/Library/
+root             92858   0.0  0.0 426940752   2656   ??  Ss   Mon11AM   0:01.02 /System/Library/
+elenatokareva    92857   0.0  0.0 426973904   4512   ??  S    Mon11AM   0:01.87 /usr/libexec/pro
+root             92854   0.0  0.0 426973472   6336   ??  Ss   Mon11AM   0:00.33 /System/Library/
+_accessoryupdater 92845   0.0  0.0 426976608   6912   ??  S    Mon11AM   0:00.71 /usr/libexec/tru
+_accessoryupdater 92844   0.0  0.0 426940736   1984   ??  S    Mon11AM   0:00.15 /usr/sbin/cfpref
+_accessoryupdater 92842   0.0  0.1 426978096  12688   ??  S    Mon11AM   0:05.86 /System/Library/
+_accessoryupdater 92840   0.0  0.0 411460720   6096   ??  Ss   Mon11AM   0:02.94 /System/Library/
+_accessoryupdater 92839   0.0  0.0 426975392   9344   ??  Ss   Mon11AM   0:07.61 /System/Library/
+root             92838   0.0  0.0 426977552   5648   ??  Ss   Mon11AM   0:00.42 /System/Library/
+elenatokareva    92619   0.0  0.0 426940800   2608   ??  S    Mon11AM   0:00.04 /System/Library/
+elenatokareva    92610   0.0  0.1 426990128  12464   ??  S    Mon11AM   0:01.15 /System/Library/
+_assetcache      92522   0.0  0.0 426975824   5120   ??  Ss   Mon11AM   0:00.26 /usr/libexec/Ass
+root             92508   0.0  0.1 426973328  11584   ??  Ss   Mon11AM   0:01.73 /usr/libexec/Pow
+elenatokareva    92500   0.0  0.0 426973664   7536   ??  S    Mon11AM   0:00.26 /System/Library/
+elenatokareva    92497   0.0  0.0 410850512   4688   ??  Ss   Mon11AM   0:00.12 /System/Library/
+elenatokareva    92491   0.0  0.0 410384800   6944   ??  Ss   Mon11AM   0:00.02 /System/Library/
+elenatokareva    92487   0.0  0.0 410516400   7456   ??  Ss   Mon11AM   0:00.03 /System/Library/
+elenatokareva    92486   0.0  0.0 410377200   4688   ??  Ss   Mon11AM   0:00.02 /System/Library/
+elenatokareva    92485   0.0  0.0 410241392   7264   ??  Ss   Mon11AM   0:00.02 /System/Library/
+elenatokareva    92484   0.0  0.0 410505776   7760   ??  Ss   Mon11AM   0:00.05 /System/Library/
+elenatokareva    92483   0.0  0.0 34051216    212   ??  Ss   Mon11AM   0:00.15 /System/Library/
+elenatokareva    92481   0.0  0.1 426976672  10576   ??  S    Mon11AM   0:01.05 /System/Library/
+root             92480   0.0  0.1 426987712  14448   ??  Ss   Mon11AM   0:04.00 /System/Library/
+elenatokareva    92475   0.0  0.0 426972576   7392   ??  S    Mon11AM   0:00.14 /System/Library/
+elenatokareva    92476   0.0  0.0 426974896   7888   ??  S    Mon11AM   0:03.04 /System/Library/
+root             92479   0.0  0.0 426973856   6656   ??  Ss   Mon11AM   0:00.11 /System/Library/
+elenatokareva    92477   0.0  0.0 426979840   8912   ??  S    Mon11AM   0:00.58 /System/Library/
+root             92211   0.0  0.0 412164064   3632   ??  Ss   Mon10AM   0:00.43 /System/Library/
+elenatokareva    92097   0.0  0.0 426994320   5792   ??  Ss   Mon10AM   0:00.81 /System/Library/
+elenatokareva    92052   0.0  0.0 426901248   5120   ??  Ss   Mon10AM   0:34.35 /System/Library/
+elenatokareva    91971   0.0  0.0 426936672   2288   ??  S    Mon10AM   0:00.05 /System/Library/
+elenatokareva    91408   0.0  1.0 1624118480 191312   ??  S    Mon10AM 148:05.66 /Applications/Go
+elenatokareva    91175   0.0  0.0 426901248   4832   ??  Ss   Mon09AM   1:20.52 /System/Library/
+elenatokareva    91149   0.0  0.1 411664560  15408   ??  Ss   Mon09AM   0:01.37 /System/Library/
+elenatokareva    90915   0.0  0.0 426941696   1040   ??  Ss   Mon09AM   0:00.28 /System/Library/
+elenatokareva    90907   0.0  0.1 426989872  15056   ??  S    Mon09AM   0:04.07 /usr/libexec/tip
+elenatokareva    90832   0.0  0.0 426951088   9088   ??  Ss   Mon09AM   0:00.36 /System/Library/
+elenatokareva    90830   0.0  0.1 410824512  14544   ??  Ss   Mon09AM   0:02.73 /System/Library/
+elenatokareva    90808   0.0  0.1 412104960  17344   ??  S    Mon09AM   0:03.29 /System/Library/
+root             90803   0.0  0.0 426974784   5216   ??  Ss   Mon09AM   0:05.03 /System/Library/
+elenatokareva    90673   0.0  0.0 426974096   5184   ??  S    Mon09AM   0:00.15 /System/Library/
+elenatokareva    90652   0.0  0.0 426973200   8528   ??  S    Mon09AM   0:00.98 /System/Library/
+elenatokareva    90500   0.0  0.0 426973536   7232   ??  S    Mon08AM   0:00.44 /System/Library/
+elenatokareva    90398   0.0  0.1 426993584  11088   ??  Ss   Mon08AM   0:00.43 /System/Library/
+elenatokareva    90396   0.0  0.0 426940752   2400   ??  S    Mon08AM   0:00.03 /System/Library/
+elenatokareva    90395   0.0  0.1 426900640  13872   ??  Ss   Mon08AM   0:02.13 /System/Library/
+elenatokareva    90394   0.0  0.3 411313232  57936   ??  Ss   Mon08AM   1:20.20 /System/Library/
+elenatokareva    90362   0.0  0.1 411111936  10944   ??  Ss   Mon08AM   0:02.74 /System/Library/
+elenatokareva    90361   0.0  0.0 426983904   8448   ??  Ss   Mon08AM   0:00.09 /System/Library/
+root             90347   0.0  0.0 426941792   2848   ??  Ss   Mon08AM   0:00.22 /System/Library/
+elenatokareva    90345   0.0  0.0 426936992   2656   ??  S    Mon08AM   0:00.06 /System/Library/
+elenatokareva    90344   0.0  0.1 411935776  21360   ??  Ss   Mon08AM   0:02.97 /System/Library/
+elenatokareva    90056   0.0  0.0 426972976   5136   ??  S    Mon08AM   0:00.25 /System/Library/
+elenatokareva    90053   0.0  0.1 427380448  15376   ??  Ss   Mon08AM   0:06.70 /System/Library/
+elenatokareva    90052   0.0  0.1 427272368  20768   ??  Ss   Mon08AM   0:09.80 /System/Library/
+elenatokareva    90049   0.0  0.1 427437776  11264   ??  Ss   Mon08AM   4:23.25 /System/Library/
+elenatokareva    90048   0.0  0.0 426951488   7392   ??  Ss   Mon08AM   0:00.75 /System/Library/
+elenatokareva    90046   0.0  0.1 427523456  26960   ??  S    Mon08AM   0:06.71 /System/Library/
+root             89849   0.0  0.0 426974352   5616   ??  Ss   Mon08AM   0:00.97 /usr/libexec/amf
+elenatokareva    88829   0.0  0.1 426999392  15872   ??  S    Mon08AM  14:35.37 /usr/libexec/rep
+elenatokareva    88774   0.0  0.1 426978368  16288   ??  S    Mon08AM   0:05.40 /System/Library/
+elenatokareva    88758   0.0  0.1 426989968  11680   ??  S    Mon08AM   0:54.65 /System/Library/
+elenatokareva    88751   0.0  0.0 426976032   6992   ??  S    Mon08AM   0:00.21 /System/Library/
+elenatokareva    88750   0.0  0.1 426985808  13344   ??  S    Mon08AM   0:46.54 /System/Library/
+elenatokareva    88745   0.0  0.0 426974208   9104   ??  S    Mon08AM   0:00.79 /System/Library/
+elenatokareva    88742   0.0  0.1 427026896  19744   ??  S    Mon08AM   2:08.35 /usr/libexec/stu
+elenatokareva    88741   0.0  0.1 426981264  11904   ??  S    Mon08AM   2:54.22 /System/Library/
+elenatokareva    88739   0.0  0.1 426976656  12112   ??  S    Mon08AM   0:01.85 /usr/libexec/fmf
+elenatokareva    88705   0.0  0.1 431342352  17904   ??  S    Mon08AM   0:04.55 /System/Library/
+elenatokareva    88704   0.0  0.1 426975840  11360   ??  S    Mon08AM   0:00.86 /System/Library/
+elenatokareva    88689   0.0  0.0 426940640   4272   ??  S    Mon08AM   0:00.32 /usr/sbin/BTLESe
+elenatokareva    88678   0.0  0.0 426901184   4880   ??  Ss   Mon08AM   0:13.44 /System/Library/
+elenatokareva    88677   0.0  0.1 412306896  26208   ??  S    Mon08AM   0:03.60 /System/Library/
+elenatokareva    88384   0.0  0.0 410948816   6656   ??  S    Mon04AM   0:00.22 /System/Library/
+elenatokareva    88376   0.0  0.1 426990832  17280   ??  S    Mon04AM   0:52.85 /usr/libexec/tra
+elenatokareva    88204   0.0  0.1 426990512  12960   ??  S    Mon03AM   0:01.00 /System/Library/
+elenatokareva    88181   0.0  0.1 426991776  19232   ??  S    Mon02AM   1:20.70 /System/Library/
+elenatokareva    88165   0.0  0.1 426980736  10624   ??  S    Mon02AM   0:03.02 /usr/libexec/pro
+elenatokareva    88163   0.0  0.1 426987120  14304   ??  S    Mon02AM   0:01.71 /usr/libexec/adp
+elenatokareva    88020   0.0  0.0 426973776   4144   ??  S    Mon12AM   0:12.11 /Library/Apple/S
+elenatokareva    88019   0.0  0.0 410639792   2000   ??  S    Mon12AM   0:00.07 /Library/Apple/S
+root             88013   0.0  0.0 426973760   4128   ??  Ss   Mon12AM   0:10.59 /Library/Apple/S
+root             88012   0.0  0.0 410639792   2000   ??  Ss   Mon12AM   0:00.06 /Library/Apple/S
+elenatokareva    88011   0.0  0.0 426951488   7664   ??  Ss   Mon12AM   0:00.76 /System/Library/
+elenatokareva    88010   0.0  0.1 411254368  12912   ??  S    Mon12AM   0:01.77 /usr/libexec/mlh
+elenatokareva    87983   0.0  0.1 426975008   9648   ??  S    Sun11PM   0:01.12 /System/Library/
+root             87976   0.0  0.0 426948048   4864   ??  Ss   Sun11PM   0:01.27 /usr/libexec/mma
+elenatokareva    87957   0.0  0.1 411798128  16224   ??  S    Sun11PM   1:18.83 /System/Library/
+elenatokareva    87944   0.0  0.1 427023296  18032   ??  S    Sun11PM   0:05.79 /System/Library/
+elenatokareva    87945   0.0  0.0 426972400   7104   ??  S    Sun11PM   0:04.64 /System/Library/
+elenatokareva    87835   0.0  0.2 427364976  35248   ??  Ss   Sun10PM   0:06.86 /System/Library/
+elenatokareva    87831   0.0  0.1 427158144  14768   ??  S    Sun10PM   0:02.35 /System/Cryptexe
+elenatokareva    87830   0.0  0.0 426973392   7232   ??  S    Sun10PM   0:01.30 /System/Library/
+elenatokareva    87828   0.0  0.1 411467824  13088   ??  Ss   Sun10PM   0:04.54 /System/Library/
+elenatokareva    87829   0.0  0.1 426977744  10784   ??  S    Sun10PM   0:02.32 cloudphotod
+elenatokareva    87827   0.0  0.1 426977840  11552   ??  S    Sun10PM   0:05.70 /usr/libexec/swt
+elenatokareva    87825   0.0  0.1 427135376  18976   ??  S    Sun10PM   0:01.91 /System/Library/
+elenatokareva    87823   0.0  0.1 426978896   9616   ??  S    Sun10PM   0:00.96 /usr/libexec/app
+elenatokareva    87824   0.0  0.0 426983952   7904   ??  S    Sun10PM   0:00.40 /System/Library/
+elenatokareva    87820   0.0  0.1 427030288  26496   ??  S    Sun10PM   1:14.20 /System/Library/
+root             87818   0.0  0.0 426940768   2080   ??  Ss   Sun10PM   0:01.13 /System/Library/
+elenatokareva    87691   0.0  0.0 410817552   4368   ??  S    Sun10PM   0:00.20 /usr/libexec/key
+elenatokareva    87529   0.0  0.2 427130736  32384   ??  Ss   Sun10PM   0:07.55 /System/Library/
+elenatokareva    87458   0.0  0.1 427065648  20608   ??  Ss   Sun10PM   0:05.55 /System/Library/
+elenatokareva    87424   0.0  0.0 426973648   7216   ??  S    Sun10PM   0:11.48 /System/Library/
+elenatokareva    87423   0.0  0.1 427025984  27952   ??  S    Sun10PM   3:10.97 /System/Library/
+root             87387   0.0  0.0 426997536   8432   ??  Ss   Sun10PM   0:04.51 /usr/sbin/system
+elenatokareva    87377   0.0  0.1 426989296  21344   ??  S    Sun10PM   0:13.68 /System/Library/
+root             87288   0.0  0.0 426940416   3200   ??  Ss   Sun10PM   0:39.85 /usr/libexec/sys
+root             87268   0.0  0.0 426940464   4368   ??  Ss   Sun10PM   0:02.41 /System/Library/
+elenatokareva    87260   0.0  0.1 426984560  17136   ??  S    Sun10PM   0:31.43 /System/Library/
+elenatokareva    87257   0.0  0.1 427023552  26496   ??  S    Sun10PM   0:09.74 /System/Library/
+elenatokareva    87182   0.0  0.3 427256512  63328   ??  S    Sun10PM   2:34.23 /System/Library/
+elenatokareva    87161   0.0  0.0 410851264   8656   ??  S    Sun10PM   0:02.07 /System/Library/
+elenatokareva    87160   0.0  0.0 426940448   4320   ??  S    Sun10PM   0:00.41 /System/Library/
+elenatokareva    87159   0.0  0.0 426940256   5664   ??  S    Sun10PM   0:00.58 /usr/libexec/fin
+root             87158   0.0  0.0 426973184   4304   ??  Ss   Sun10PM   0:00.35 /usr/libexec/mob
+root             87157   0.0  0.0 426974000   8160   ??  Ss   Sun10PM   0:01.83 /usr/libexec/fin
+elenatokareva    87156   0.0  0.0 426977200   8816   ??  S    Sun10PM   0:00.44 /usr/libexec/fin
+root             87155   0.0  0.0 426973376   7968   ??  Ss   Sun10PM   0:25.03 /usr/libexec/fin
+elenatokareva    87154   0.0  0.1 427001792  23008   ??  S    Sun10PM   1:42.34 /usr/libexec/sea
+elenatokareva    87150   0.0  0.1 426998672  21072   ??  S    Sun10PM   0:28.53 /usr/libexec/lin
+elenatokareva    87147   0.0  0.1 427128304  19808   ??  S    Sun10PM   0:01.73 /System/Library/
+elenatokareva    87146   0.0  0.1 427144304  26048   ??  S    Sun10PM   2:04.86 /System/Library/
+elenatokareva    87142   0.0  0.0 426973424   5248   ??  S    Sun10PM   0:00.88 /System/Library/
+elenatokareva    87139   0.0  0.1 426993312  23440   ??  S    Sun10PM   0:57.99 /System/Library/
+root             87131   0.0  0.0 426974496   8272   ??  Ss   Sun10PM   0:04.72 /usr/libexec/cou
+elenatokareva    87118   0.0  0.0 426977680   7600   ??  S    Sun10PM   0:01.85 /usr/libexec/key
+root             87097   0.0  0.0 426974448   7328   ??  Ss   Sun10PM   0:02.17 /usr/libexec/bio
+root             87092   0.0  0.1 426990768  15056   ??  Ss   Sun10PM   0:01.30 /System/Library/
+elenatokareva    87091   0.0  0.1 412187472  18896   ??  S    Sun10PM   0:02.46 /System/Library/
+root             87090   0.0  0.0 426941888   3808   ??  Ss   Sun10PM   0:25.77 /System/Library/
+_fpsd            87077   0.0  0.0 426939216   4672   ??  Ss   Sun10PM   0:12.86 /System/Library/
+root             87076   0.0  0.0 410812080   5456   ??  Ss   Sun10PM   0:00.79 /usr/libexec/con
+elenatokareva    87075   0.0  0.1 426980944  25808   ??  S    Sun10PM   0:13.37 /System/Library/
+elenatokareva    87073   0.0  0.1 431371952  17200   ??  S    Sun10PM   0:20.43 /System/Library/
+elenatokareva    87072   0.0  0.1 426977840  12064   ??  S    Sun10PM   0:07.76 /System/Library/
+elenatokareva    87063   0.0  0.2 427076336  30304   ??  S    Sun10PM   0:07.55 /System/Library/
+elenatokareva    87052   0.0  0.1 426991088  12976   ??  S    Sun10PM   0:02.11 /System/Library/
+root             87051   0.0  0.0 426940784   1888   ??  Ss   Sun10PM   0:00.37 /System/Library/
+root             87050   0.0  0.0 426972992   2848   ??  Ss   Sun10PM   0:00.20 /System/Library/
+elenatokareva    87044   0.0  0.1 426990960  14464   ??  S    Sun10PM   0:01.05 /System/Library/
+root             87042   0.0  0.0 426975456   4384   ??  Ss   Sun10PM   0:02.33 /usr/libexec/san
+root             87040   0.0  0.0 426973168   3248   ??  Ss   Sun10PM   0:02.40 /usr/libexec/sec
+_locationd       87036   0.0  0.0 426975488   6288   ??  S    Sun10PM   0:00.57 /usr/libexec/tru
+_cmiodalassistants 87034   0.0  0.0 426975472   6288   ??  S    Sun10PM   0:00.59 /usr/libexec/tru
+_locationd       87029   0.0  0.1 426976608  13216   ??  S    Sun10PM   0:06.56 /System/Library/
+_cmiodalassistants 87028   0.0  0.1 426976608  11920   ??  S    Sun10PM   0:05.83 /System/Library/
+elenatokareva    87027   0.0  0.1 426978928  14592   ??  S    Sun10PM   0:10.70 /System/Library/
+elenatokareva    87026   0.0  0.1 426979680  13040   ??  S    Sun10PM   0:09.21 /System/Library/
+elenatokareva    87025   0.0  0.1 426988816  22304   ??  S    Sun10PM   5:56.46 /System/Library/
+root             87017   0.0  0.1 426973248   9744   ??  Ss   Sun10PM   0:00.46 /System/Library/
+elenatokareva    87016   0.0  0.1 426976176  11552   ??  S    Sun10PM   0:54.88 /usr/libexec/tri
+_iconservices    87011   0.0  0.0 426973472   3584   ??  Ss   Sun10PM   0:00.14 /System/Library/
+elenatokareva    87004   0.0  0.0 426984192   8992   ??  S    Sun10PM   0:01.31 /System/Library/
+elenatokareva    87002   0.0  0.1 426992240  22992   ??  S    Sun10PM   2:31.33 /usr/libexec/sir
+elenatokareva    87001   0.0  0.1 426983280  12416   ??  S    Sun10PM   0:06.26 /usr/libexec/nea
+root             87000   0.0  0.1 426983120  10272   ??  Ss   Sun10PM   0:44.75 /usr/libexec/neh
+root             86999   0.0  0.1 426983952  22720   ??  Ss   Sun10PM   2:15.18 /usr/libexec/mob
+root             86992   0.0  0.0 410772208   3264   ??  Ss   Sun10PM   0:00.27 /usr/libexec/onl
+root             86973   0.0  0.0 412166528   6656   ??  Ss   Sun10PM   0:00.39 /System/Library/
+elenatokareva    86971   0.0  0.0 426974608   9296   ??  S    Sun10PM   0:03.49 /System/Library/
+elenatokareva    86965   0.0  0.0 426937888   3728   ??  S    Sun10PM   0:00.90 /System/Library/
+elenatokareva    86963   0.0  0.1 426989680  13184   ??  S    Sun10PM   0:06.27 /System/Library/
+elenatokareva    86945   0.0  0.1 426977120  13136   ??  S    Sun10PM   0:02.35 /System/Library/
+root             86938   0.0  0.0 426940656   3552   ??  Ss   Sun10PM   0:00.34 /usr/libexec/use
+elenatokareva    86928   0.0  0.1 427290304  23216   ??  S    Sun10PM   0:05.26 /System/Library/
+elenatokareva    86847   0.0  0.1 427027488  17456   ??  S    Sun10PM   0:11.17 /System/Library/
+elenatokareva    86816   0.0  0.1 412050624  15760   ??  Ss   Sun10PM   0:01.70 /System/Library/
+elenatokareva    86807   0.0  0.0 426975184   9152   ??  S    Sun10PM   0:02.42 /System/Library/
+elenatokareva    86685   0.0  0.1 426990832  14032   ??  S    Sun09PM  53:48.45 /System/Library/
+elenatokareva    86679   0.0  0.1 426983568  14096   ??  S    Sun09PM   0:04.76 /usr/libexec/pkd
+root             86657   0.0  0.0 426976800   8384   ??  Ss   Sun09PM   0:18.95 /usr/libexec/rtc
+elenatokareva    86638   0.0  0.1 411909184  14256   ??  Ss   Sun09PM   0:12.34 /System/Library/
+root             86606   0.0  0.1 426978544  13312   ??  S    Sun09PM   0:16.21 /System/Library/
+elenatokareva    86603   0.0  0.2 427009104  40496   ??  S    Sun09PM   1:52.21 /System/Library/
+elenatokareva    86602   0.0  0.1 426984256  11712   ??  S    Sun09PM   0:02.56 /usr/libexec/sec
+elenatokareva    86592   0.0  0.0 410668624   7840   ??  S    Sun09PM   0:07.12 /usr/libexec/Sid
+elenatokareva    86588   0.0  0.1 426991504  14224   ??  Ss   Sun09PM   0:01.23 /System/Library/
+elenatokareva    86569   0.0  0.1 426986528  13984   ??  S    Sun09PM   0:10.36 /System/Library/
+elenatokareva    86513   0.0  0.8 1622350880 141984   ??  S    Sun09PM  18:24.09 /Applications/Go
+elenatokareva    85880   0.0  0.1 427139392  12144   ??  S    Sun09PM   0:09.71 /System/Cryptexe
+elenatokareva    85879   0.0  0.1 426980624  17328   ??  S    Sun09PM   0:08.60 /System/Library/
+elenatokareva    85874   0.0  0.0 427080512   8304   ??  S    Sun09PM   0:00.41 /System/Cryptexe
+elenatokareva    85362   0.0  0.2 427027472  29344   ??  S    Sun08PM   1:25.94 /System/Library/
+elenatokareva    85309   0.0  0.4 1622313296  79344   ??  S    Sun08PM   0:31.66 /Applications/Go
+elenatokareva    85186   0.0  0.1 412339984  27376   ??  S    Sun08PM   0:13.87 /System/Library/
+elenatokareva    85123   0.0  1.9 1622418528 362176   ??  S    Sun08PM  15:08.84 /Applications/Go
+elenatokareva    84962   0.0  0.0 426979264   5984   ??  S    Sun08PM   0:01.29 /usr/libexec/dmd
+root             84945   0.0  0.1 426993344  15872   ??  Ss   Sun08PM   8:24.63 /usr/libexec/cor
+root             84755   0.0  0.0 426974416   3824   ??  Ss   Sun08PM   0:00.13 /usr/libexec/kcp
+_audiomxd        84262   0.0  0.0 426882160   7456   ??  Ss   Sun08PM   0:07.45 /usr/libexec/aud
+elenatokareva    84063   0.0  0.1 426984000  13328   ??  S    Sun08PM   0:06.90 /usr/libexec/swc
+elenatokareva    84062   0.0  0.1 426986128  18256   ??  S    Sun08PM   0:15.41 /usr/libexec/pro
+elenatokareva    84060   0.0  0.1 426974448  10192   ??  S    Sun08PM   0:09.03 /System/Library/
+elenatokareva    82023   0.0  0.2 427026000  29296   ??  S    Sun07PM   2:11.85 /System/Library/
+elenatokareva    75892   0.0  0.2 427199200  30528   ??  Ss   Sun02PM   0:15.39 /System/Applicat
+elenatokareva    75891   0.0  0.1 427016336  26288   ??  Ss   Sun02PM   0:54.98 /System/Library/
+elenatokareva    75890   0.0  0.1 427167152  16720   ??  Ss   Sun02PM   0:07.36 /System/Applicat
+elenatokareva    75888   0.0  0.1 426951600  11072   ??  Ss   Sun02PM   0:23.67 /System/Library/
+elenatokareva    75869   0.0  0.2 412192272  30816   ??  S    Sun02PM   1:00.97 /System/Library/
+_fpsd            73427   0.0  0.0 426940672   1808   ??  S    Sun01PM   0:06.30 /usr/sbin/distno
+elenatokareva    73208   0.0  0.0 410671104    928   ??  S    Sun01PM   0:00.06 /Library/Develop
+_diskimagesiod   73199   0.0  0.0 427056832   2752   ??  Ss   Sun01PM   7:31.84 /usr/libexec/dis
+_diskimagesiod   73176   0.0  0.0 427015872   2704   ??  Ss   Sun01PM   0:51.17 /usr/libexec/dis
+root             72772   0.0  0.0 411770880   3488   ??  Ss   Sun01PM   0:04.32 /Library/Develop
+elenatokareva    72605   0.0  0.0 426983792   6624   ??  S    Sun01PM   0:01.64 /System/Library/
+root             72568   0.0  0.0 410933936   2144   ??  Ss   Sun01PM   0:00.07 /Library/Develop
+elenatokareva    71788   0.0  0.0 427117920   8896   ??  S    Sun12PM   0:01.84 /System/Library/
+root             70513   0.0  0.0 34780428    724   ??  Ss   Sun12PM   0:00.77 /Library/Privile
+elenatokareva    70391   0.0  0.0 411440752   2880   ??  Ss   Sun12PM   0:09.09 /System/Library/
+root             70388   0.0  0.0 426939872   2800   ??  Ss   Sun12PM   0:00.19 /System/Library/
+elenatokareva    69295   0.0  0.2 411310464  47120   ??  Ss   Sun11AM   0:39.78 /System/Library/
+elenatokareva    67578   0.0  0.1 426991648  12208   ??  S    Sun10AM   0:06.07 /System/Library/
+_biome           67550   0.0  0.0 426973648   8144   ??  Ss   Sun10AM   0:16.81 /System/Library/
+root             66482   0.0  0.0 426972640   5360   ??  Ss   Sun10AM   0:20.51 /System/Library/
+elenatokareva    65318   0.0  0.4 427379984  67488   ??  S    Sun09AM   5:46.32 /System/Library/
+elenatokareva    65280   0.0  0.1 411953056  15648   ??  S    Sun09AM   0:11.94 /System/Library/
+elenatokareva    65226   0.0  0.1 426975328  14192   ??  S    Sun09AM   4:25.63 /System/Library/
+elenatokareva    65222   0.0  0.1 427000096  25072   ??  S    Sun09AM   1:58.87 /usr/libexec/kno
+elenatokareva    64128   0.0  0.1 426985552  14784   ??  S    Sun09AM   5:38.38 /System/Library/
+elenatokareva    61814   0.0  0.1 426996128  22432   ??  S    Sun08AM   2:50.55 /System/Library/
+elenatokareva    60671   0.0  0.1 426977696  13936   ??  S    Sun07AM   0:25.05 /System/Library/
+elenatokareva    60664   0.0  0.0 426974784   8976   ??  S    Sun07AM   0:16.71 /usr/libexec/blu
+root             60660   0.0  0.0 426974640   4688   ??  Ss   Sun07AM   0:29.28 /System/Library/
+root             59434   0.0  0.0 426940720   3888   ??  Ss   Sun06AM   0:05.10 /System/Library/
+elenatokareva    36059   0.0  0.1 426979856  13584   ??  S    Sat08PM   0:11.67 /System/Library/
+elenatokareva    17465   0.0  0.4 1623842688  75648   ??  S    Sat10AM  10:41.48 /Applications/Go
+_driverkit       16782   0.0  0.0 426851552    144   ??  Ss   Sat10AM   0:01.95 /System/Library/
+root             16736   0.0  0.1 427002752  22144   ??  Ss   Sat10AM  43:47.12 /usr/sbin/blueto
+root             92202   0.0  0.1 426979312  10656   ??  Ss   Fri05PM   3:47.68 /usr/libexec/wif
+elenatokareva    88567   0.0  0.0 426984320   8000   ??  S    Fri03PM   1:04.81 /usr/libexec/mil
+elenatokareva    57058   0.0  0.1 426999504  24528   ??  S     5Feb25  15:09.88 /usr/libexec/rou
+elenatokareva    38670   0.0  0.1 427002896  24624   ??  S     4Feb25   3:26.95 /System/Library/
+elenatokareva    22753   0.0  0.1 427024608  15328   ??  S     4Feb25  23:37.05 /usr/libexec/net
+elenatokareva    80678   0.0  0.0 499203568   6880   ??  Ss    2Feb25   0:14.93 /System/Library/
+elenatokareva    80677   0.0  0.0 411930144   8928   ??  S     2Feb25   1:45.94 /Applications/zo
+elenatokareva    80675   0.0  0.7 499336800 138032   ??  Ss    2Feb25   6:09.30 /System/Library/
+elenatokareva    80674   0.0  0.5 499367712  93136   ??  Ss    2Feb25   2:44.69 /System/Library/
+elenatokareva    80673   0.0  0.1 499305232  16240   ??  Ss    2Feb25   0:23.96 /System/Library/
+elenatokareva    80663   0.0  0.0 427208928   7376   ??  Ss    2Feb25   4:02.08 /System/Library/
+elenatokareva    80661   0.0  0.1 427497600  14784   ??  Ss    2Feb25   2:31.60 /System/Library/
+elenatokareva    80658   0.0  0.0 411800144   8768   ??  S     2Feb25   1:47.05 /Applications/zo
+root             80642   0.0  0.0 426975232   2096   ??  Ss    2Feb25   0:00.14 /System/Library/
+_diskimagesiod   77626   0.0  0.0 427028160    976   ??  Ss    2Feb25   0:11.66 /usr/libexec/dis
+elenatokareva    61459   0.0  0.0 411075680    272   ??  S<   24Jan25   0:00.10 /Applications/Po
+_diskimagesiod   56547   0.0  0.0 427024064   1312   ??  Ss   24Jan25   0:05.06 /usr/libexec/dis
+_diskimagesiod   36564   0.0  0.0 427024064   1312   ??  Ss   23Jan25   0:07.02 /usr/libexec/dis
+_diskimagesiod    3997   0.0  0.0 427024064    976   ??  Ss   21Jan25   0:06.07 /usr/libexec/dis
+elenatokareva    89248   0.0  0.1 443991920  12256   ??  S    20Jan25  70:27.38 /Applications/Т
+elenatokareva    89245   0.0  0.5 1596830768  97616   ??  S    20Jan25   5:48.32 /Applications/Т
+elenatokareva    89241   0.0  0.1 444080256  16880   ??  S    20Jan25  31:43.64 /Applications/Т
+elenatokareva    89239   0.0  0.2 444472912  35008   ??  S    20Jan25 100:24.63 /Applications/Т
+elenatokareva    89238   0.0  0.0 443716528   1840   ??  S    20Jan25   0:01.83 /Applications/Т
+elenatokareva    70218   0.0  0.1 1622144352   9632   ??  S    17Jan25   0:27.38 /Applications/Go
+root             69928   0.0  0.0 426973120   2848   ??  Ss   17Jan25   0:02.11 /usr/libexec/tas
+_diskimagesiod   69845   0.0  0.0 427019968    976   ??  Ss   17Jan25   0:00.38 /usr/libexec/dis
+elenatokareva    65420   0.0  0.0 426977600   3408   ??  S    16Jan25   0:14.12 /System/Cryptexe
+_fpsd            60990   0.0  0.1 426991744  18976   ??  Ss   16Jan25   1:12.23 /System/Library/
+elenatokareva    42510   0.0  0.1 427203776  11664   ??  Ss   14Jan25  21:49.05 /System/Library/
+elenatokareva    34898   0.0  0.0 444327520   9184   ??  S    14Jan25   2:19.94 /Applications/Go
+_audiomxd        34768   0.0  0.0 426940672   1200   ??  S    14Jan25   0:50.28 /usr/sbin/distno
+elenatokareva    28631   0.0  0.0 426936832    464   ??  S    13Jan25   0:00.13 /System/Library/
+elenatokareva    15144   0.0  0.0 426985408   8416   ??  S    10Jan25   1:18.55 /System/Library/
+elenatokareva    13755   0.0  0.0 443980480   5888   ??  S    10Jan25   3:42.19 /Applications/Po
+elenatokareva    13670   0.0  0.0 444060896   8256   ??  S    10Jan25  20:17.32 /Applications/Po
+elenatokareva    13668   0.0  0.0 443716416    544   ??  S    10Jan25   0:00.08 /Applications/Po
+elenatokareva    11807   0.0  0.1 1623835008   9728   ??  S    10Jan25   5:12.12 /private/var/fol
+elenatokareva    11272   0.0  0.0 426984288   7056   ??  S    10Jan25  25:36.34 /System/Library/
+elenatokareva    10053   0.0  0.0 426973808   4304   ??  S    10Jan25   0:01.74 /System/Library/
+elenatokareva     7790   0.0  0.1 431613776  21200   ??  Ss   10Jan25   5:28.59 /System/Library/
+elenatokareva     7766   0.0  0.0 499301344   9200   ??  Ss   10Jan25   0:14.01 /System/Library/
+_neuralengine     5048   0.0  0.0 426940672   1200   ??  S    10Jan25   0:56.45 /usr/sbin/distno
+elenatokareva     4965   0.0  0.1 427049088  12096   ??  S    10Jan25   3:12.45 /System/Library/
+elenatokareva     4961   0.0  0.0 426936640    304   ??  S    10Jan25   0:00.11 /usr/libexec/USB
+elenatokareva     4960   0.0  0.0 427127936   7984   ??  S    10Jan25   0:15.06 /System/Library/
+root              4933   0.0  0.0 426940784   1392   ??  Ss   10Jan25   0:00.17 /System/Library/
+_modelmanagerd    4760   0.0  0.0 426962208   6608   ??  Ss   10Jan25   0:06.06 /usr/libexec/mod
+elenatokareva     3835   0.0  0.0 418314928   2768   ??  S     9Jan25   9:12.32 /usr/bin/java -j
+_rmd              3832   0.0  0.0 426940672   1200   ??  S     9Jan25   0:57.21 /usr/sbin/distno
+elenatokareva     3826   0.0  0.0 412348880   9184   ??  S     9Jan25  10:28.13 /opt/cisco/secur
+elenatokareva     3814   0.0  0.0 410605536      0   ??  S     9Jan25   0:00.02 /bin/sh -c JAVA_
+elenatokareva     3812   0.0  0.0 411789408   6672   ??  S     9Jan25   0:11.90 /System/Library/
+elenatokareva     3813   0.0  0.1 412592960  24416   ??  S     9Jan25   2:42.61 /System/Library/
+elenatokareva     3793   0.0  0.0 426940336   2624   ??  S     9Jan25   0:00.82 /System/Library/
+root              3792   0.0  0.0 426940304   1232   ??  Ss    9Jan25   0:01.70 /System/Library/
+elenatokareva     3788   0.0  0.0 426937056    912   ??  S     9Jan25   0:00.09 /System/Library/
+elenatokareva     2078   0.0  0.1 444261968  24128   ??  S     9Jan25  11:19.21 /Applications/Go
+elenatokareva     2077   0.0  0.1 444201760  17232   ??  S     9Jan25  22:14.60 /Applications/Go
+root              2065   0.0  0.0 426940192   1744   ??  Ss    9Jan25   0:00.21 /System/Library/
+elenatokareva     1597   0.0  0.0 426975296   7168   ??  S     9Jan25   1:07.69 /System/Library/
+root              2047   0.0  0.0 426973840   6144   ??  Ss    9Jan25   1:06.35 /usr/libexec/wif
+elenatokareva     2033   0.0  0.0 410640480   1216   ??  Ss    9Jan25   0:00.23 /System/Library/
+root              2038   0.0  0.0 416788320   3568   ??  Ss    9Jan25 713:59.54 /Library/SystemE
+elenatokareva     2034   0.0  0.0 427000192   8144   ??  S     9Jan25   0:11.89 /usr/libexec/ptp
+elenatokareva     2032   0.0  0.0 426973312   2768   ??  S     9Jan25   0:06.20 /System/Library/
+elenatokareva     1981   0.0  0.1 426989760  12384   ??  SN    9Jan25   1:07.64 /System/Library/
+elenatokareva     1920   0.0  0.1 1623856912  23808   ??  S     9Jan25   3:44.77 /private/var/fol
+elenatokareva     1718   0.0  0.1 444021792  14176   ??  S     9Jan25  11:29.16 /private/var/fol
+elenatokareva     1704   0.0  0.0 444295936   7696   ??  S     9Jan25   5:19.29 /private/var/fol
+elenatokareva     1689   0.0  0.0 443716688   1840   ??  S     9Jan25   0:02.53 /var/folders/jc/
+elenatokareva     1596   0.0  0.0 426973952   1712   ??  S     9Jan25   0:00.90 /System/Library/
+elenatokareva     1590   0.0  0.1 444225920  17584   ??  S     9Jan25   5:10.25 /Applications/Go
+elenatokareva     1583   0.0  0.0 410763648   1584   ??  S     9Jan25   0:06.30 /Library/Applica
+_assetcache       1575   0.0  0.0 426940672   1200   ??  S     9Jan25   0:57.75 /usr/sbin/distno
+elenatokareva     1516   0.0  0.1 427020432  19904   ??  S     9Jan25   3:01.62 /System/Library/
+elenatokareva     1496   0.0  0.0 427205056   6208   ??  Ss    9Jan25   1:59.15 /System/Library/
+elenatokareva     1492   0.0  0.2 427050800  28432   ??  S     9Jan25 557:24.35 /System/Library/
+elenatokareva     1486   0.0  0.1 427205424  25424   ??  S     9Jan25   0:58.65 /System/Library/
+root              1482   0.0  0.0 426953328    240   ??  Ss    9Jan25   0:00.16 /System/Library/
+elenatokareva     1481   0.0  0.2 427589456  41360   ??  Ss    9Jan25   2:30.38 /System/Library/
+elenatokareva     1479   0.0  0.0 427270176   5584   ??  S     9Jan25   2:30.41 /System/Library/
+_applepay         1477   0.0  0.0 426940672   1216   ??  S     9Jan25   0:58.35 /usr/sbin/distno
+elenatokareva     1471   0.0  0.0 426974128   4544   ??  S     9Jan25   0:00.85 /System/Library/
+root              1220   0.0  0.0 426973264   3280   ??  Ss    9Jan25   0:01.35 /System/Library/
+_gamecontrollerd  1467   0.0  0.0 426940672   1216   ??  S     9Jan25   0:58.81 /usr/sbin/distno
+_fpsd             1236   0.0  0.1 426955328  11808   ??  Ss    9Jan25   0:05.72 /System/Library/
+elenatokareva     1016   0.0  0.0 426976896   3760   ??  S     9Jan25   0:05.92 /System/Library/
+elenatokareva      961   0.0  0.0 427035728   8960   ??  Ss    9Jan25   1:14.32 /System/Library/
+elenatokareva      960   0.0  0.3 413897328  56416   ??  S     9Jan25  75:43.47 /System/Library/
+elenatokareva      957   0.0  0.0 411639440   2800   ??  S     9Jan25   0:02.59 /System/Library/
+elenatokareva      932   0.0  0.5 414180672  98880   ??  S     9Jan25  23:54.47 /System/Library/
+elenatokareva      912   0.0  0.1 411069584  15552   ??  Ss    9Jan25   3:46.45 /System/Library/
+_oahd              877   0.0  0.0 426936832    448   ??  Ss    9Jan25   0:01.63 /usr/libexec/ros
+root               874   0.0  0.1 426985280  12128   ??  Ss    9Jan25  23:41.92 /usr/libexec/gam
+_nearbyd           869   0.0  0.0 426985936   9328   ??  Ss    9Jan25  13:09.41 /usr/libexec/nea
+elenatokareva      868   0.0  0.0 443761024   2144   ??  S     9Jan25   0:03.14 /Applications/Go
+elenatokareva      865   0.0  0.0 411018304   5728   ??  Ss    9Jan25   5:29.13 /System/Library/
+elenatokareva      856   0.0  0.0 426974000   6144   ??  S     9Jan25   0:01.99 /usr/libexec/ses
+root               824   0.0  0.0 426941968    128   ??  Ss    9Jan25   0:00.48 automountd
+elenatokareva      822   0.0  0.0 426996368    240   ??  S     9Jan25   0:00.97 /System/Library/
+elenatokareva      815   0.0  0.1 411956848  13744   ??  S     9Jan25   1:41.20 /System/Library/
+elenatokareva      811   0.0  0.0 426974016   7888   ??  S     9Jan25   5:03.88 /System/Library/
+elenatokareva      810   0.0  0.9 413264928 172048   ??  S     9Jan25  93:51.21 /System/Library/
+elenatokareva      809   0.0  0.0 412320320   8944   ??  S     9Jan25   0:20.11 /System/Library/
+elenatokareva      808   0.0  0.3 412739744  65104   ??  S     9Jan25 198:18.32 /System/Library/
+elenatokareva      806   0.0  0.2 413079264  39104   ??  S     9Jan25  31:11.01 /System/Library/
+elenatokareva      805   0.0  0.0 411730384   8032   ??  S     9Jan25   3:25.99 /System/Library/
+elenatokareva      804   0.0  0.1 411905984  27552   ??  S     9Jan25   4:52.57 /Applications/Ci
+elenatokareva      799   0.0  0.0 426913536   3712   ??  S     9Jan25   1:59.45 /usr/libexec/avc
+elenatokareva      798   0.0  0.2 1624503568  45520   ??  S     9Jan25  27:52.23 /private/var/fol
+elenatokareva      795   0.0  0.7 414055888 122736   ??  S     9Jan25  80:19.80 /System/Applicat
+elenatokareva      794   0.0  0.1 426989344  14528   ??  S     9Jan25   3:19.32 /System/Library/
+elenatokareva      792   0.0  0.0 426936080   1168   ??  S     9Jan25   0:04.22 /System/Library/
+elenatokareva      789   0.0  0.4 413538160  81648   ??  S     9Jan25   8:59.11 /Applications/Ma
+elenatokareva      783   0.0  0.5 412846976  98144   ??  S     9Jan25  63:10.15 /System/Applicat
+elenatokareva      778   0.0  0.1 426991120  20928   ??  S     9Jan25  20:00.32 /System/Library/
+elenatokareva      682   0.0  0.1 427193200  16224   ??  S     9Jan25 255:52.15 /System/Library/
+elenatokareva      653   0.0  0.1 427020224  14784   ??  S     9Jan25  95:06.20 /System/Library/
+elenatokareva      767   0.0  0.0 426975520   7744   ??  S     9Jan25   1:23.34 /System/Library/
+elenatokareva      741   0.0  0.1 426979728  10160   ??  S     9Jan25   1:07.97 /System/Library/
+root               730   0.0  0.1 426951552   9696   ??  Ss    9Jan25   2:13.88 /usr/sbin/fileco
+elenatokareva      723   0.0  0.1 427108048  25984   ??  S     9Jan25 105:44.43 /usr/libexec/sha
+elenatokareva      718   0.0  0.0 426974288   7648   ??  S     9Jan25   0:18.20 /System/Library/
+_ctkd              716   0.0  0.0 426973088   1872   ??  Ss    9Jan25   0:00.48 /System/Library/
+elenatokareva      712   0.0  0.3 412860912  47264   ??  S     9Jan25  30:05.85 /System/Library/
+root               700   0.0  0.0 426973536    752   ??  Ss    9Jan25   0:01.32 /System/Library/
+elenatokareva      695   0.0  0.1 427020832  21248   ??  S     9Jan25  24:30.26 /System/Library/
+elenatokareva      692   0.0  0.1 426975376  18224   ??  S     9Jan25  38:32.34 /System/Library/
+elenatokareva      687   0.0  0.1 426996256  18976   ??  S     9Jan25  10:17.68 /System/Library/
+elenatokareva      694   0.0  0.1 427016224  28032   ??  S     9Jan25  19:14.09 /System/Library/
+elenatokareva      671   0.0  0.0 426984160   9280   ??  S     9Jan25  15:15.16 /System/Library/
+elenatokareva      680   0.0  0.1 426982688   9648   ??  S     9Jan25  41:17.92 /usr/libexec/tru
+elenatokareva      679   0.0  0.0 426972320   5728   ??  S     9Jan25   2:17.82 /usr/libexec/con
+_appleevents       672   0.0  0.0 426940672   1216   ??  S     9Jan25   0:59.38 /usr/sbin/distno
+elenatokareva      664   0.0  0.4 431588624  69184   ??  S     9Jan25  29:19.06 /System/Library/
+elenatokareva      667   0.0  0.0 426970096   3216   ??  S     9Jan25   5:05.09 /System/Library/
+elenatokareva      659   0.0  0.1 427028448  17264   ??  S     9Jan25  13:22.36 /usr/libexec/sec
+elenatokareva      658   0.0  0.1 426985904  12528   ??  S     9Jan25   1:25.44 /System/Library/
+elenatokareva      654   0.0  0.1 426993424  17536   ??  S     9Jan25  18:45.29 /usr/sbin/userno
+elenatokareva      652   0.0  0.1 427007552  14624   ??  S     9Jan25  30:22.10 /usr/libexec/rap
+elenatokareva      651   0.0  0.1 426997232  17280   ??  S     9Jan25  17:00.97 /usr/libexec/nsu
+elenatokareva      639   0.0  0.0 426976816   9344   ??  S     9Jan25   7:25.22 /usr/libexec/Con
+elenatokareva      643   0.0  0.0 426951520   9328   ??  S     9Jan25   0:47.99 /usr/libexec/pbo
+elenatokareva      640   0.0  0.1 427017840  12000   ??  S     9Jan25   4:27.04 /usr/libexec/lsd
+elenatokareva      628   0.0  0.0 426975632   8848   ??  S     9Jan25  28:33.03 /usr/libexec/Use
+elenatokareva      634   0.0  0.3 412212064  54640   ??  S     9Jan25  53:00.18 /System/Library/
+elenatokareva      637   0.0  0.0 411917520   7008   ??  S     9Jan25   3:13.65 /usr/sbin/univer
+elenatokareva      615   0.0  0.0 426942688   5264   ??  S     9Jan25  23:51.42 /usr/sbin/cfpref
+elenatokareva      579   0.0  0.0 426940672   5456   ??  S     9Jan25  20:27.73 /usr/sbin/distno
+root             23372   0.0  0.0 410723760   2224 s000  R+    3:16PM   0:00.01 ps aux
+root               573   0.0  0.0 426985168   6480   ??  Ss    9Jan25   2:40.07 /usr/libexec/wif
+root               572   0.0  0.0 426974928   2336   ??  S     9Jan25   1:27.12 /usr/sbin/system
+root               565   0.0  0.0 412298048   9200   ??  Ss    9Jan25   1:36.49 /Library/Applica
+_trustd            560   0.0  0.1 426990272  11104   ??  Ss    9Jan25 266:55.08 /usr/libexec/tru
+_accessoryupdater   548   0.0  0.0 426940672   1232   ??  S     9Jan25   1:00.48 /usr/sbin/distno
+_spotlight         539   0.0  0.0 426940672   1200   ??  S     9Jan25   1:00.11 /usr/sbin/distno
+_nsurlsessiond     531   0.0  0.0 426940672   1216   ??  S     9Jan25   1:01.63 /usr/sbin/distno
+root               530   0.0  0.8 427809584 144048   ??  Ss    9Jan25 269:07.74 /System/Library/
+_softwareupdate    525   0.0  0.0 426940672   1200   ??  S     9Jan25   1:03.92 /usr/sbin/distno
+root               524   0.0  0.0 426998848   1808   ??  Ss    9Jan25   0:02.25 /System/Library/
+_driverkit         523   0.0  0.0 426851680    592   ??  Ss    9Jan25   0:24.33 /System/Library/
+_driverkit         522   0.0  0.0 426851472    112   ??  Ss    9Jan25   0:15.86 /System/Library/
+root               517   0.0  0.0 426973456   6544   ??  Ss    9Jan25  11:36.55 /usr/libexec/aud
+_appleevents       514   0.0  0.0 426973600   5040   ??  Ss    9Jan25   0:37.80 /System/Library/
+root               515   0.0  0.1 427027760  21344   ??  Ss    9Jan25  34:45.42 /usr/libexec/sea
+root               507   0.0  0.2 412689984  29472   ??  Ss    9Jan25  86:33.59 /Library/Applica
+root               513   0.0  0.0 410949248   2368   ??  Ss    9Jan25  12:43.32 /usr/libexec/aud
+root               512   0.0  0.0 426975248   3712   ??  Ss    9Jan25   3:17.82 /usr/libexec/ane
+_cmiodalassistants   501   0.0  0.0 426973600   1936   ??  Ss    9Jan25   0:01.73 /System/Library/
+root               496   0.0  0.0 411921600   6016   ??  Ss    9Jan25  23:35.54 vpnagentd -execv
+_cmiodalassistants   500   0.0  0.0 426882592   3136   ??  Ss    9Jan25   0:01.75 /usr/libexec/cam
+_cmiodalassistants   498   0.0  0.0 426978672   4464   ??  Ss    9Jan25 292:16.84 /usr/sbin/appleh
+root               499   0.0  0.0 426979664   6096   ??  Ss    9Jan25   0:45.42 /usr/libexec/sto
+root               494   0.0  0.0 426974384   5696   ??  Ss    9Jan25  15:22.68 /usr/sbin/Wirele
+root               491   0.0  0.0 426992432   9024   ??  Ss    9Jan25  30:14.39 /usr/libexec/sys
+_coreaudiod        492   0.0  0.0 410253136   1264   ??  Ss    9Jan25   8:56.25 Core Audio Drive
+_softwareupdate    488   0.0  0.1 431419072  13472   ??  Ss    9Jan25   7:11.96 /System/Library/
+root               419   0.0  0.1 426986336   9600   ??  Ss    9Jan25 362:00.68 /System/Library/
+_locationd         424   0.0  0.0 426940672   1216   ??  S     9Jan25   1:06.78 /usr/sbin/distno
+_cmiodalassistants   422   0.0  0.0 426940672   1216   ??  S     9Jan25   1:05.02 /usr/sbin/distno
+root               421   0.0  0.0 426975520    880   ??  Ss    9Jan25   1:04.95 /usr/sbin/mDNSRe
+_windowserver      417   0.0  0.0 426940672   1216   ??  S     9Jan25   1:08.85 /usr/sbin/distno
+_coreaudiod        414   0.0  0.0 426940672   1216   ??  S     9Jan25   1:07.25 /usr/sbin/distno
+root               396   0.0  0.0 426940672   1248   ??  S     9Jan25   1:14.80 /usr/sbin/distno
+root               418   0.0  0.0 426940368   1536   ??  Ss    9Jan25   0:00.26 /usr/libexec/App
+_mdnsresponder     416   0.0  0.1 427018064  15280   ??  Ss    9Jan25 202:55.76 /usr/sbin/mDNSRe
+_networkd          409   0.0  0.1 426988976  13648   ??  Ss    9Jan25 124:29.44 /usr/libexec/sym
+_analyticsd        388   0.0  0.0 426984416   9392   ??  Ss    9Jan25  18:41.08 /System/Library/
+_locationd         345   0.0  0.1 427005216  26560   ??  Ss    9Jan25 263:29.04 /usr/libexec/loc
+root               400   0.0  0.0 426974752   4624   ??  Ss    9Jan25  13:39.62 /System/Library/
+root               398   0.0  0.0 426973136   6528   ??  Ss    9Jan25   1:14.49 /usr/libexec/eli
+root               392   0.0  0.0 426972704   2032   ??  Ss    9Jan25   3:11.15 /usr/libexec/apf
+_nsurlsessiond     390   0.0  0.1 427048544  13856   ??  Ss    9Jan25   6:24.05 /usr/libexec/nsu
+_coreaudiod        383   0.0  0.1 427013632  20320   ??  Ss    9Jan25 1031:08.15 /usr/sbin/coreau
+root               382   0.0  0.1 426980128  23552   ??  Ss    9Jan25 4505:12.57 /usr/libexec/air
+root               377   0.0  0.1 426986784  11984   ??  Ss    9Jan25   2:40.21 /usr/libexec/lsd
+root               374   0.0  0.1 426983536  11088   ??  Ss    9Jan25  22:48.35 /System/Library/
+root               375   0.0  0.0 426967120   3024   ??  Ss    9Jan25   1:03.78 /System/Library/
+root               372   0.0  0.1 426986464  16496   ??  Ss    9Jan25 254:44.69 /usr/libexec/run
+_timed             341   0.0  0.0 426973424   5216   ??  Ss    9Jan25   3:06.25 /usr/libexec/tim
+_distnote          351   0.0  0.0 426940672   2416   ??  Ss    9Jan25   7:52.04 /usr/sbin/distno
+_usbmuxd           342   0.0  0.0 426982192   3072   ??  Ss    9Jan25   1:04.95 /System/Library/
+root               371   0.0  0.0 426941024   4912   ??  Ss    9Jan25  35:28.86 /usr/sbin/cfpref
+elenatokareva      370   0.0  0.2 412667584  36864   ??  Ss    9Jan25  56:39.11 /System/Library/
+root               368   0.0  0.1 426997104  13264   ??  Ss    9Jan25  28:33.17 /System/Library/
+root               313   0.0  0.0 426941360    512   ??  Ss    9Jan25   0:55.61 /usr/libexec/IOM
+root               307   0.0  0.0 426984720   8816   ??  Ss    9Jan25   3:38.83 /usr/sbin/system
+root               304   0.0  0.1 426978896   9792   ??  Ss    9Jan25   5:11.01 /System/Library/
+root               346   0.0  0.0 426977488   6960   ??  Ss    9Jan25  45:11.35 /usr/libexec/nes
+root               356   0.0  0.0 426974352   5328   ??  Ss    9Jan25   0:01.95 /System/Library/
+root               300   0.0  0.0 426974512   6464   ??  Ss    9Jan25 142:42.76 /usr/libexec/smd
+root               333   0.0  0.0 426941392   1648   ??  Ss    9Jan25  14:06.99 /usr/sbin/syslog
+root               365   0.0  0.0 426996400   8608   ??  Ss    9Jan25   2:08.09 /System/Library/
+root               349   0.0  0.1 426980720  14784   ??  Ss    9Jan25  50:11.48 /usr/libexec/das
+root               329   0.0  0.0 426973040   5040   ??  Ss    9Jan25   1:48.99 /usr/libexec/dis
+root               348   0.0  0.0 426936640    112   ??  Ss    9Jan25   0:00.07 autofsd
+root               328   0.0  0.0 426976960   2256   ??  Ss    9Jan25   0:01.28 /usr/libexec/ker
+root               317   0.0  0.0 426974048   1408   ??  Ss    9Jan25   0:28.04 /usr/libexec/rem
+root               357   0.0  0.0 426936656    176   ??  Ss    9Jan25   0:00.06 /usr/sbin/Kernel
+root               339   0.0  0.1 426981728  12320   ??  Ss    9Jan25  35:23.58 /System/Library/
+root               355   0.0  0.0 426940256   3696   ??  Ss    9Jan25   0:04.19 /System/Library/
+root               336   0.0  0.0 426973456   1696   ??  Ss    9Jan25   4:07.83 /usr/libexec/the
+root               326   0.0  0.2 427072208  30544   ??  Ss    9Jan25 146:19.37 /System/Library/
+root               322   0.0  0.0 426940832    960   ??  Ss    9Jan25   0:38.52 /usr/libexec/wat
+root               343   0.0  0.0 426975072   6064   ??  Ss    9Jan25   1:55.17 /usr/sbin/securi
+root               364   0.0  0.0 426974256   7552   ??  Ss    9Jan25  13:35.23 /usr/libexec/Air
+root               312   0.0  0.0 426974912   9104   ??  Ss    9Jan25  78:39.02 /System/Library/
+root               310   0.0  0.1 427004896  10256   ??  Ss    9Jan25 248:21.11 /usr/libexec/con
+root               303   0.0  0.0 426948528   6032   ??  Ss    9Jan25 112:17.17 /System/Library/
+root               301   0.0  0.1 426975408   9712   ??  Ss    9Jan25  26:31.38 /usr/libexec/Use
+root               578   0.0  0.0 426973776   8432   ??  Ss    9Jan25   0:13.14 /System/Library/
+elenatokareva    23371   0.0  0.1 426959792  26544   ??  S     3:15PM   0:00.11 /System/Library/
+elenatokareva    23370   0.0  0.2 426959792  28944   ??  S     3:15PM   0:00.22 /System/Library/
+elenatokareva    23369   0.0  0.1 411009408  20496   ??  Ss    3:15PM   0:00.05 /System/Library/
+elenatokareva    23368   0.0  0.1 426959792  26768   ??  S     3:15PM   0:00.18 /System/Library/
+elenatokareva    23358   0.0  0.2 426960880  30192   ??  S     3:14PM   0:00.30 /System/Library/
+elenatokareva    23343   0.0  0.4 1622025344  81920   ??  S     3:13PM   0:00.06 /Applications/Go
+elenatokareva    23318   0.0  0.0 426936672   4976   ??  S     3:10PM   0:00.03 /System/Library/
+elenatokareva    23310   0.0  0.2 427236032  34176   ??  Ss    3:10PM   0:00.13 /System/Library/
+elenatokareva    23298   0.0  0.1 411142544  18000   ??  Ss    3:08PM   0:00.07 /System/Library/
+elenatokareva    23127   0.0  0.0 410790128   3472 s000  S     2:55PM   0:00.12 -bash
+root             23126   0.0  0.0 410773024   3760 s000  Ss    2:55PM   0:00.02 login -pf elenat
+elenatokareva    23110   0.0  0.3 1588239808  56432   ??  S     2:55PM   0:00.31 /Applications/Go
+elenatokareva    23085   0.0  0.1 427003136  11984   ??  S     2:40PM   0:00.26 /System/Library/
+elenatokareva    23079   0.0  0.0 426973824   6784   ??  Ss    2:38PM   0:00.03 /System/Library/
+root             23078   0.0  0.1 426987968  27392   ??  Ss    2:38PM   0:12.16 /usr/libexec/Per
+elenatokareva    22963   0.0  0.4 499460016  67040   ??  Ss    2:30PM   0:00.67 /System/Library/
+elenatokareva    22962   0.0  0.3 499645664  59424   ??  Ss    2:30PM   0:00.39 /System/Library/
+elenatokareva    22650   0.0  0.1 426911328  16464   ??  Ss    2:01PM   0:00.20 /System/Library/
+elenatokareva    22649   0.0  0.3 411106672  62176   ??  Ss    2:01PM   0:00.93 /System/Library/
+elenatokareva    22648   0.0  0.5 412633872 101120   ??  S     2:01PM   0:14.64 /System/Applicat
+elenatokareva    22470   0.0  0.2 427007664  31120   ??  Ss    1:50PM   0:00.16 /System/Library/
+elenatokareva    22433   0.0  0.8 1622186192 155136   ??  S     1:47PM   0:13.16 /Applications/Go
+elenatokareva    22392   0.0  0.6 1622108160 113712   ??  S     1:43PM   0:01.33 /Applications/Go
+elenatokareva    22316   0.0  0.1 426978288   9840   ??  S     1:40PM   0:00.19 /System/Library/
+elenatokareva    22068   0.0  0.0 411377648   3808   ??  Ss    1:18PM   0:00.06 /System/Library/
+elenatokareva    22067   0.0  0.0 411377680   3808   ??  Ss    1:18PM   0:00.09 /System/Library/
+elenatokareva    22066   0.0  0.1 426911984  11312   ??  Ss    1:18PM   0:00.39 /System/Library/
+elenatokareva    22058   0.0  0.0 426986144   7680   ??  Ss    1:18PM   0:00.10 /System/Library/
+MacBook-Pro:test3 elenatokareva$ kill 666
+MacBook-Pro:test3 elenatokareva$ ping rusau.net
+PING rusau.net (5.181.161.75): 56 data bytes
+64 bytes from 5.181.161.75: icmp_seq=0 ttl=51 time=162.934 ms
+64 bytes from 5.181.161.75: icmp_seq=1 ttl=54 time=71.437 ms
+64 bytes from 5.181.161.75: icmp_seq=2 ttl=54 time=70.886 ms
+64 bytes from 5.181.161.75: icmp_seq=3 ttl=54 time=78.900 ms
+64 bytes from 5.181.161.75: icmp_seq=4 ttl=52 time=74.511 ms
+64 bytes from 5.181.161.75: icmp_seq=5 ttl=52 time=73.818 ms
+64 bytes from 5.181.161.75: icmp_seq=6 ttl=54 time=90.330 ms
+64 bytes from 5.181.161.75: icmp_seq=7 ttl=54 time=80.725 ms
+64 bytes from 5.181.161.75: icmp_seq=8 ttl=52 time=76.975 ms
+64 bytes from 5.181.161.75: icmp_seq=9 ttl=54 time=74.952 ms
+64 bytes from 5.181.161.75: icmp_seq=10 ttl=54 time=83.355 ms
+64 bytes from 5.181.161.75: icmp_seq=11 ttl=51 time=91.365 ms
+64 bytes from 5.181.161.75: icmp_seq=12 ttl=51 time=106.687 ms
+64 bytes from 5.181.161.75: icmp_seq=13 ttl=52 time=73.389 ms
+64 bytes from 5.181.161.75: icmp_seq=14 ttl=54 time=82.310 ms
+64 bytes from 5.181.161.75: icmp_seq=15 ttl=54 time=81.489 ms
+64 bytes from 5.181.161.75: icmp_seq=16 ttl=52 time=72.641 ms
+64 bytes from 5.181.161.75: icmp_seq=17 ttl=54 time=78.887 ms
+64 bytes from 5.181.161.75: icmp_seq=18 ttl=52 time=74.175 ms
+64 bytes from 5.181.161.75: icmp_seq=19 ttl=51 time=90.844 ms
+64 bytes from 5.181.161.75: icmp_seq=20 ttl=54 time=78.729 ms
+64 bytes from 5.181.161.75: icmp_seq=21 ttl=52 time=71.724 ms
+64 bytes from 5.181.161.75: icmp_seq=22 ttl=54 time=72.531 ms
+64 bytes from 5.181.161.75: icmp_seq=23 ttl=54 time=80.576 ms
+64 bytes from 5.181.161.75: icmp_seq=24 ttl=51 time=95.062 ms
+^C
+--- rusau.net ping statistics ---
+44 packets transmitted, 44 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 70.886/82.499/162.934/14.700 ms
+
+MacBook-Pro:test3 elenatokareva$ ping -c 5 rusau.net
+PING rusau.net (5.181.161.75): 56 data bytes
+64 bytes from 5.181.161.75: icmp_seq=0 ttl=54 time=141.389 ms
+64 bytes from 5.181.161.75: icmp_seq=1 ttl=54 time=84.322 ms
+64 bytes from 5.181.161.75: icmp_seq=2 ttl=52 time=72.230 ms
+64 bytes from 5.181.161.75: icmp_seq=3 ttl=54 time=75.585 ms
+64 bytes from 5.181.161.75: icmp_seq=4 ttl=54 time=81.841 ms
+
+--- rusau.net ping statistics ---
+5 packets transmitted, 5 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 72.230/91.073/141.389/25.524 ms
+
+MacBook-Pro:test3 elenatokareva$ curl -X GET "https://petstore.swagger.io/v2/pet/findByStatus?status=sold" -H "accept: application/json"
+[{"id":9223372016900031666,"category":{"id":0,"name":"string"},"name":"name","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":76543345678876,"category":{"id":0,"name":"kashka"},"name":"Shashka","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":662,"category":{"id":40,"name":"CategoryName"},"name":"doggie","photoUrls":["http://example.com/photo1","http://example.com/photo2"],"tags":[{"id":2,"name":"TagName"}],"status":"sold"},{"id":586,"category":{"id":83,"name":"CategoryName"},"name":"doggie","photoUrls":["http://example.com/photo1","http://example.com/photo2"],"tags":[{"id":8,"name":"TagName"}],"status":"sold"},{"id":850,"category":{"id":54,"name":"CategoryName"},"name":"doggie","photoUrls":["http://example.com/photo1","http://example.com/photo2"],"tags":[{"id":43,"name":"TagName"}],"status":"sold"},{"id":778,"category":{"id":2,"name":"cat2"},"name":"Timosha","photoUrls":["https://pbs.twimg.com/profile_images/948294484596375552/RyGNqDEM_400x400.jpg"],"tags":[{"id":600,"name":"kitten"}],"status":"sold"},{"id":12084391,"category":{"id":-48583,"name":"cupidatat amet commodo"},"name":"doggie","photoUrls":["fugiat Ut eu","exercitation nostr"],"tags":[{"id":-27183415,"name":"e"},{"id":86979382,"name":"in anim consectetur Lorem ut"}],"status":"sold"},{"id":7574746,"category":{"id":1,"name":"Cat"},"name":"Hardy","photoUrls":["https://i.pinimg.com/originals/5c/2c/44/5c2c44f16da1caf134c00bc4f9c72ea0.jpg"],"tags":[{"id":7805,"name":"Mainecoon"}],"status":"sold"},{"id":14,"category":{"id":359,"name":"dog"},"name":"Korbin","photoUrls":[],"tags":[],"status":"sold"},{"id":7,"category":{"id":0,"name":"string"},"name":"toto","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":9223372036854758184,"category":{"id":22,"name":"rccddn"},"name":"Updated_nmpflju","photoUrls":["https://example.com/apgzr.jpg"],"tags":[{"id":685,"name":"euhbxtos"}],"status":"sold"},{"id":9223372036854758186,"category":{"id":1,"name":"fish"},"name":"picolo","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":9223372036854758229,"category":{"id":1,"name":"fish"},"name":"picolo","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":9223372036854758230,"category":{"id":1,"name":"fish"},"name":"picolo","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":9223372036854758231,"category":{"id":1,"name":"fish"},"name":"picolo","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":9223372036854758233,"category":{"id":1,"name":"fish"},"name":"picolo","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":9223372036854758239,"category":{"id":1,"name":"fish"},"name":"picolo","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":9223372036854758245,"category":{"id":1,"name":"fish"},"name":"picolo","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":9223372036854758246,"category":{"id":1,"name":"fish"},"name":"picolo","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":9223372036854758247,"category":{"id":1,"name":"fish"},"name":"picolo","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":9223372036854758274,"category":{"id":0,"name":"monkey"},"name":"Fruit","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":6788,"category":{"id":5,"name":"hxiqlz"},"name":"Updated_lubjxqw","photoUrls":["https://example.com/pwzzv.jpg"],"tags":[{"id":144,"name":"iboeyaef"}],"status":"sold"},{"id":9223372036854775321,"category":{"id":1,"name":"fish"},"name":"picolo","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":9223372036854775334,"category":{"id":1,"name":"fish"},"name":"picolo","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":16022001,"category":{"id":0,"name":"string"},"name":"Cat","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":922337203685477597,"category":{"id":2,"name":"dog"},"name":"Chappi","photoUrls":[],"tags":[],"status":"sold"},{"id":19467,"name":"見響见响仮仏!$%&()*+,-ƄƅƆḞḟṀʶʷʸăĄą","photoUrls":["https://petstore3.swagger.io/resources/photos/623389095.jpg"],"tags":[],"status":"sold"},{"id":504,"category":{"id":0,"name":"Anna"},"name":"ddogs","photoUrls":["string"],"tags":[{"id":0,"name":"low"}],"status":"sold"},{"id":748,"category":{"id":0,"name":"Anna"},"name":"ddogs","photoUrls":["string"],"tags":[{"id":0,"name":"low"}],"status":"sold"},{"id":13,"category":{"id":0,"name":"cats"},"photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":16061990,"category":{"id":16061990,"name":"Собака"},"name":"Шарик","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":2112,"category":{"id":1234,"name":"dog"},"name":"teo","photoUrls":["https://simpleone.ru/glossary/user-stories","https://simpleone.ru/glossary/user-stories"],"tags":[{"id":12345,"name":"rus"},{"id":123456,"name":"eng"}],"status":"sold"},{"id":386,"category":{"id":34,"name":"CategoryName"},"name":"doggie","photoUrls":["http://example.com/photo1","http://example.com/photo2"],"tags":[{"id":49,"name":"TagName"}],"status":"sold"},{"id":121021,"name":"DaniilKachurUpdated","photoUrls":[],"tags":[],"status":"sold"},{"id":123456787654,"category":{"id":2,"name":"dog"},"name":"Omg","photoUrls":[],"tags":[],"status":"sold"},{"id":9198,"category":{"id":0,"name":"cat"},"name":"Vaice","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":12345,"category":{"id":1,"name":"New Category Name"},"name":"New Name","photoUrls":["https://www.mypet.abc/photos/1.jpg"],"tags":[{"id":1,"name":"New Tag Name"}],"status":"sold"},{"id":91999,"category":{"id":0,"name":"catca"},"name":"Vai","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":254,"category":{"id":359,"name":"dog"},"name":"Korbin","photoUrls":[],"tags":[],"status":"sold"},{"id":99999999999,"category":{"id":359,"name":"dog"},"name":"Korbin","photoUrls":[],"tags":[],"status":"sold"},{"id":291,"category":{"id":359,"name":"dog"},"name":"Korbin","photoUrls":[],"tags":[],"status":"sold"},{"id":9841012,"category":{"id":359,"name":"dog"},"photoUrls":[],"tags":[],"status":"sold"},{"id":99013,"name":"DaniilKachurUpdated","photoUrls":[],"tags":[],"status":"sold"},{"id":9,"category":{"id":0,"name":"cats"},"name":"King Kong","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"sold"},{"id":121211013,"name":"DaniilKachurUpdated","photoUrls":[],"tags":[],"status":"sold"}
+
+MacBook-Pro:test3 elenatokareva$ curl -X POST "https://petstore.swagger.io/v2/user" -H "Content-Type: application/json" -d '{ "id": 88888, "username": "Elena11", "firstName": "Elena", "lastName": "Tokareva", "email": "elena.tok@example.com", "password": "123", "phone": "99-234-45-45", "userStatus": 1 }'
+{"code":200,"type":"unknown","message":"88888"}

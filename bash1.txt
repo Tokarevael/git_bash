@@ -1,0 +1,46 @@
+MacBook-Pro:~ elenatokareva$ pwd
+/Users/elenatokareva
+MacBook-Pro:~ elenatokareva$ mkdir test1
+MacBook-Pro:~ elenatokareva$ cd /Users/elenatokareva/test1 
+MacBook-Pro:test1 elenatokareva$ touch file1
+MacBook-Pro:test1 elenatokareva$ touch file2
+MacBook-Pro:test1 elenatokareva$ touch file3
+MacBook-Pro:test1 elenatokareva$ ls
+file1	file2	file3
+MacBook-Pro:test1 elenatokareva$ cd ~
+MacBook-Pro:~ elenatokareva$ mkdir test2
+MacBook-Pro:~ elenatokareva$ rm -r test2
+MacBook-Pro:~ elenatokareva$ rm test1/file2
+MacBook-Pro:~ elenatokareva$ mkdir test3
+MacBook-Pro:~ elenatokareva$ touch test3/file1
+MacBook-Pro:~ elenatokareva$ touch test3/file2
+MacBook-Pro:~ elenatokareva$ rm -r test3
+MacBook-Pro:~ elenatokareva$ mkdir test4
+MacBook-Pro:~ elenatokareva$ cd /Users/elenatokareva/test1 
+MacBook-Pro:test1 elenatokareva$ mv file1 /Users/elenatokareva/test4
+MacBook-Pro:test1 elenatokareva$ mv file3 /Users/elenatokareva/test4
+MacBook-Pro:test1 elenatokareva$ cd /Users/elenatokareva/test4
+MacBook-Pro:test4 elenatokareva$ echo -e "1line\2line\3line" >> file1
+MacBook-Pro:test4 elenatokareva$ cat file1
+1line\2line\3line
+MacBook-Pro:test4 elenatokareva$ echo -e "1line\n2line\n3line" >> file1
+MacBook-Pro:test4 elenatokareva$ cat file1
+1line\2line\3line
+1line
+2line
+3line
+MacBook-Pro:test4 elenatokareva$ sed '1d' file1
+1line
+2line
+3line
+MacBook-Pro:test4 elenatokareva$ sed -i '' '1d' file1
+MacBook-Pro:test4 elenatokareva$ cat file1 file3
+1line
+2line
+3line
+1line
+2line
+3line
+MacBook-Pro:test4 elenatokareva$ nano file1
+MacBook-Pro:test4 elenatokareva$ cat file1
+line1_1 line2_2 line3_3
